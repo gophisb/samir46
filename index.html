@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عسل هود | Hood Honey - الفخامة الملكية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#fffdf5',
+                            100: '#fef7da',
+                            200: '#fdeca7',
+                            300: '#fbd967',
+                            400: '#f9c131',
+                            500: '#e59d1a',
+                            600: '#b87410',
+                            700: '#8a510b',
+                        },
+                        royal: {
+                            dark: '#0c0a06',
+                            card: '#16120b',
+                            border: '#3a2d1a'
+                        }
+                    },
+                    backgroundImage: {
+                        'honey-gradient': "linear-gradient(135deg, #1f170b 0%, #0c0a06 100%)",
+                        'gold-metallic': "linear-gradient(90deg, #b87410 0%, #f9c131 50%, #b87410 100%)"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #0c0a06;
+        }
+        .glass-panel {
+            background: rgba(22, 18, 11, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .glass-input {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(184, 116, 16, 0.25);
+        }
+        .glass-input:focus {
+            border-color: #f9c131;
+            box-shadow: 0 0 12px rgba(249, 193, 49, 0.2);
+        }
+        .gold-glow {
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(229, 157, 26, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+            filter: blur(40px);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="text-gray-200 antialiased selection:bg-gold-500 selection:text-black min-h-screen relative overflow-x-hidden">
+    <div class="gold-glow top-[-100px] right-[-100px]"></div>
+    <div class="gold-glow bottom-[200px] left-[-100px]"></div>
+
+    <div class="bg-gradient-to-r from-gold-700 via-gold-500 to-gold-700 text-royal-dark text-center py-2 px-4 text-xs md:text-sm font-black tracking-wide shadow-xl relative z-50">
+        <i class="fa-solid fa-crown ml-1.5 animate-bounce"></i> إصدار محدود • التوصيل متوفر لكافة البلديات والولايات الجزائرية <i class="fa-solid fa-truck-clock mr-1.5"></i>
+    </div>
+
+    <header class="border-b border-royal-border/60 glass-panel sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-center sm:text-right">
+                <div class="flex items-center gap-2.5 justify-center sm:justify-start">
+                    <span class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-gold-300 to-gold-500">عسل هود</span>
+                    <span class="text-gold-500 font-light text-xl">|</span>
+                    <span class="text-sm font-black text-gold-400 tracking-widest font-mono uppercase mt-1">Hood Honey</span>
+                </div>
+                <p class="text-[10px] text-gray-500 tracking-widest mt-0.5 uppercase">L'Apiculture Royale De Luxe</p>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="hidden md:flex items-center gap-4 text-xs font-semibold text-gray-400">
+                    <span><i class="fa-solid fa-shield-heart text-gold-500 ml-1"></i> طبيعي 100%</span>
+                    <span><i class="fa-solid fa-vial text-gold-500 ml-1"></i> مفحوص مخبرياً</span>
+                </div>
+                <a href="#order-section" class="bg-gradient-to-r from-gold-600 to-gold-400 hover:from-gold-500 hover:to-gold-300 text-royal-dark font-black px-6 py-2.5 rounded-xl shadow-lg shadow-gold-600/20 hover:shadow-gold-500/40 transition-all duration-300 text-xs sm:text-sm transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-basket-shopping ml-1.5"></i> اطلب الآن
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-8 md:py-16 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            <div class="lg:col-span-6 space-y-8">
+                <div class="space-y-4">
+                    <div class="inline-flex items-center gap-2 bg-gold-500/10 border border-gold-500/20 px-3 py-1 rounded-full text-xs font-bold text-gold-400">
+                        <span class="w-1.5 h-1.5 rounded-full bg-gold-400 animate-ping"></span> نسيج العسل الجبلي النقي ، مستخلص لأرقى الموائد الجزائرية
+                    </div>
+                    <h1 class="text-3xl md:text-5xl font-black text-white leading-tight">
+                        عسل السدر الملكي الفاخر <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-gold-600">من مناحل هود التجاري</span>
+                    </h1>
+                </div>
+
+                <div class="relative bg-gradient-to-b from-royal-card to-royal-dark border border-royal-border rounded-3xl p-6 overflow-hidden shadow-2xl group">
+                    <div class="absolute top-4 right-4 bg-red-600 text-white text-[11px] font-black px-3 py-1.5 rounded-full shadow-md z-20">
+                        الوزن صافي: 500 غرام
+                    </div>
+                    <div class="py-12 flex flex-col items-center justify-center relative">
+                        <div class="absolute inset-0 bg-radial-gradient from-gold-500/10 to-transparent opacity-50 blur-xl"></div>
+                        <i class="fa-solid fa-jar text-gold-500 text-9xl filter drop-shadow-[0_10px_25px_rgba(229,157,26,0.45)] transform group-hover:scale-105 transition duration-500"></i>
+                        <div class="mt-6 text-center space-y-1">
+                            <p class="text-xs uppercase tracking-widest text-gold-400 font-bold">HOOD HONEY</p>
+                            <p class="text-xs text-gray-500">L'APICULTURE ROYALE</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4 text-gray-300 text-sm md:text-base leading-relaxed">
+                    <p class="border-r-2 border-gold-500 pr-4">
+                        يتميز بطعمه الغني الأصيل وقوامه المخملي الفريد، ويُقدّم كمنتج طبيعي فاخر للاستمتاع بجودة العسل الجزائري النقي المتوافق مع أرقى الأذواق والمعايير العالمية.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs">
+                        <div class="bg-royal-card/80 border border-royal-border/50 p-3.5 rounded-xl flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-gold-500/10 flex items-center justify-center text-gold-400 text-base"><i class="fa-solid fa-certificate"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white">ضمان نقاوة 100%</h4>
+                                <p class="text-gray-500 text-[10px]">مستخلص طبيعياً بلا إضافات</p>
+                            </div>
+                        </div>
+                        <div class="bg-royal-card/80 border border-royal-border/50 p-3.5 rounded-xl flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-gold-500/10 flex items-center justify-center text-gold-400 text-base"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white">شحن سريع آمن</h4>
+                                <p class="text-gray-500 text-[10px]">توصيل مبرد ومحمي للولاية</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="order-section" class="lg:col-span-6" x-data="shippingCalculator()">
+                <div class="glass-panel border-2 border-gold-500/30 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-gold-600 via-gold-400 to-gold-600"></div>
+                    <div class="mb-6 pb-4 border-b border-royal-border/60">
+                        <p class="text-xs text-gold-400 font-bold uppercase tracking-widest mb-2">01. بيانات الهوية والاتصال</p>
+                        <h2 class="text-2xl font-black text-white">استمارة الحجز الفاخرة</h2>
+                    </div>
+
+                    <form @submit.prevent="submitOrder()" class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 mb-1.5" for="name">الاسم واللقب الكامل *</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-500"><i class="fa-solid fa-user"></i></span>
+                                <input id="name" x-model="formData.name" type="text" required
+                                    class="w-full glass-input rounded-xl py-3.5 pr-11 pl-4 text-sm text-white placeholder-gray-600 focus:outline-none transition"
+                                    placeholder="أدخل اسمك الثلاثي كاملاً">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 mb-1.5" for="phone">رقم الهاتف المحمول (05 / 06 / 07) *</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-500"><i class="fa-solid fa-phone"></i></span>
+                                <input id="phone" x-model="formData.phone" type="tel" required
+                                    class="w-full glass-input rounded-xl py-3.5 pr-11 pl-4 text-sm text-white placeholder-gray-600 focus:outline-none transition text-right tracking-wider"
+                                    placeholder="06XXXXXXXX أو 07XXXXXXXX" pattern="^(05|06|07)[0-9]{8}$">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-xs text-gray-500">+213 (0)</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-3 border-t border-royal-border/60">
+                            <p class="text-xs text-gold-400 font-bold uppercase tracking-widest mb-2">02. وجهة الشحن والتسليم</p>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 mb-1.5" for="wilaya_select">اختر ولايتك الإدارية *</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-500"><i class="fa-solid fa-map-location-dot"></i></span>
+                                <select id="wilaya_select" x-model="formData.wilayaKey" @change="updateShipping()"
+                                    class="w-full glass-input rounded-xl py-3.5 pr-11 pl-10 text-sm text-white focus:outline-none transition appearance-none cursor-pointer" required>
+                                    <option value="" disabled selected class="text-gray-600 bg-royal-dark">-- اضغط هنا لاختيار ولايتك --</option>
+                                    <option value="algiers" class="bg-royal-dark">16 - الجزائر العاصمة</option>
+                                    <option value="blida" class="bg-royal-dark">09 - البليدة</option>
+                                    <option value="oran" class="bg-royal-dark">31 - وهران</option>
+                                    <option value="constantine" class="bg-royal-dark">25 - قسنطينة</option>
+                                    <option value="annaba" class="bg-royal-dark">23 - عنابة</option>
+                                    <option value="chlef" class="bg-royal-dark">02 - الشلف</option>
+                                    <option value="laghouat" class="bg-royal-dark">03 - الأغواط</option>
+                                    <option value="djelfa" class="bg-royal-dark">17 - الجلفة</option>
+                                    <option value="mascara" class="bg-royal-dark">29 - معسكر</option>
+                                    <option value="setif" class="bg-royal-dark">19 - سطيف</option>
+                                    <option value="ouled_djellal" class="bg-royal-dark">61 - أولاد جلال (مستحدثة)</option>
+                                    <option value="touggourt" class="bg-royal-dark">65 - تقرت (مستحدثة)</option>
+                                    <option value="djanet" class="bg-royal-dark">66 - جانت (حدودية)</option>
+                                    <option value="bou_saada" class="bg-royal-dark">69 - بوسعادة (مستحدثة جديدة)</option>
+                                </select>
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-500 pointer-events-none">
+                                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 mb-1.5" for="address">العنوان الدقيق والبلدية *</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-500"><i class="fa-solid fa-location-dot"></i></span>
+                                <input id="address" x-model="formData.address" type="text" required
+                                    class="w-full glass-input rounded-xl py-3.5 pr-11 pl-4 text-sm text-white placeholder-gray-600 focus:outline-none transition"
+                                    placeholder="الحي، الشارع، رقم المنزل أو أقرب معلم">
+                            </div>
+                        </div>
+
+                        <div x-show="formData.wilayaKey !== ''" x-transition class="bg-royal-card/50 border border-royal-border rounded-2xl p-4 space-y-2">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-gray-400">سعر عسل هود الملكي الثابت:</span>
+                                <span class="text-white font-bold">4,500 دج</span>
+                            </div>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-gray-400">تكلفة توصيل الولاية المحددة:</span>
+                                <span class="text-gold-400 font-bold" x-text="shippingCost + ' دج'"></span>
+                            </div>
+                            <div class="flex justify-between text-sm font-black pt-2 border-t border-royal-border">
+                                <span class="text-white">المجموع الإجمالي الكلي المالي:</span>
+                                <span class="text-gold-500 text-lg" x-text="totalCost.toLocaleString() + ' دج'"></span>
+                            </div>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-gold-600 to-gold-400 hover:from-gold-500 hover:to-gold-300 text-royal-dark font-black py-4 px-6 rounded-xl shadow-xl shadow-gold-500/20 hover:shadow-gold-500/40 transition-all duration-300 text-sm transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-lock ml-1.5"></i> اطلب الآن — الدفع عند الاستلام (COD)
+                        </button>
+
+                        <p class="text-center text-[10px] text-gray-600 leading-relaxed">
+                            نحافظ على خصوصية بيانات طلبك ونستخدِمها فقط لمعالجة عملية التوصيل الموثوقة.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-royal-border/50 mt-10 py-6 text-center">
+        <p class="text-xs text-gray-600">&copy; 2026 عسل هود - Hood Honey. جميع الحقوق محفوظة برمجياً وتجارياً.</p>
+        <p class="text-[10px] text-gray-700 mt-1">واجهة براند فاخرة مخصصة لعمليات التجارة الإلكترونية المحترفة عبر الولايات الجزائرية.</p>
+    </footer>
+
+    <script>
+        function shippingCalculator() {
+            return {
+                productPrice: 4500,
+                shippingCost: 0,
+                totalCost: 4500,
+                formData: { name: '', phone: '', wilayaKey: '', address: '' },
+                wilayas: {
+                    algiers: { name: "16 - الجزائر العاصمة", cost: 350 },
+                    blida: { name: "09 - البليدة", cost: 400 },
+                    oran: { name: "31 - وهران", cost: 400 },
+                    constantine: { name: "25 - قسنطينة", cost: 400 },
+                    annaba: { name: "23 - عنابة", cost: 400 },
+                    chlef: { name: "02 - الشلف", cost: 500 },
+                    laghouat: { name: "03 - الأغواط", cost: 550 },
+                    djelfa: { name: "17 - الجلفة", cost: 500 },
+                    mascara: { name: "29 - معسكر", cost: 500 },
+                    setif: { name: "19 - سطيف", cost: 450 },
+                    ouled_djellal: { name: "61 - أولاد جلال (مستحدثة)", cost: 550 },
+                    touggourt: { name: "65 - تقرت (مستحدثة)", cost: 600 },
+                    djanet: { name: "66 - جانت (حدودية)", cost: 750 },
+                    bou_saada: { name: "69 - بوسعادة (مستحدثة جديدة)", cost: 500 }
+                },
+                updateShipping() {
+                    let selected = this.wilayas[this.formData.wilayaKey];
+                    if (selected) {
+                        this.shippingCost = selected.cost;
+                        this.totalCost = this.productPrice + this.shippingCost;
+                    }
+                },
+                submitOrder() {
+                    if (!this.formData.name || !this.formData.phone || !this.formData.wilayaKey || !this.formData.address) {
+                        alert('يرجى ملء جميع الحقول المطلوبة.');
+                        return;
+                    }
+                    alert(`تهانينا ${this.formData.name}!\nتم استلام طلبك لـ عسل هود الفاخر بنجاح.\nالمجموع الإجمالي الكلي للدفع عند الاستلام هو: ${this.totalCost} دج.\nسيتصل بك موظف خدمة العملاء للتأكيد فوراً.`);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
