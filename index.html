@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOUD | عسل جبلي فاخر</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@1&family=Marcellus&family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
@@ -16,6 +17,8 @@
             --text-dark: #1c1c1c;
             --text-muted: #666;
             --accent-black: #151515;
+            --white: #ffffff;
+            --input-bg: #f7f5f2;
         }
         * {
             box-sizing: border-box;
@@ -126,6 +129,8 @@
             align-items: center;
             gap: 10px;
             box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+            cursor: pointer;
+            border: none;
         }
         .btn-primary:hover {
             transform: translateY(-3px);
@@ -141,29 +146,19 @@
         }
         .product-display-frame {
             border: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 15px;
+            padding: 20px;
             background: rgba(255,255,255,0.02);
             backdrop-filter: blur(5px);
             border-radius: 8px;
-            box-shadow: 0 30px 70px rgba(0,0,0,0.8);
-        }
-        .product-placeholder {
-            width: 420px;
-            height: 460px;
-            background: #111 url('https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
-            border-radius: 6px;
-            transition: transform 0.5s ease;
             position: relative;
         }
-        .product-placeholder::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.7));
-            border-radius: 6px;
+        .product-placeholder {
+            width: 380px;
+            height: 480px;
+            background: #111 url('https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+            border-radius: 4px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            transition: transform 0.5s ease;
         }
         .product-placeholder:hover {
             transform: scale(1.02);
@@ -258,42 +253,125 @@
         .qr-code {
             width: 140px;
             height: 140px;
-            background: url('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/213663561135?text=سلام%20هود%2C%20حاب%20نطلب%20عسل%20جبلي%20فاخر%201%20كلغ%20مع%20التوصيل%20المجاني') center/cover;
+            background: url('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://houdhoney.com') center/cover;
         }
         .qr-text {
             color: #000;
-            font-size: 11px;
-            margin-top: 8px;
+            font-size: 12px;
             font-weight: bold;
+            margin-top: 8px;
         }
-        .whatsapp-floating {
+        /* نافذة الطلب المنبثقة */
+        .modal-overlay {
             position: fixed;
-            bottom: 30px;
-            left: 30px;
-            background-color: #25d366;
-            color: #fff;
-            width: 60px;
-            height: 60px;
-            border-radius: 50px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(15px);
+            z-index: 2000;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.4s ease;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .checkout-box {
+            background: var(--white);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            width: 90%;
+            max-width: 500px;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+            position: relative;
+            transform: translateY(30px);
+            transition: all 0.4s ease;
+        }
+        .modal-overlay.active .checkout-box {
+            transform: translateY(0);
+        }
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 26px;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .checkout-box h2 {
+            font-size: 24px;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            text-align: center;
+            font-weight: 700;
+        }
+        .checkout-box h2 span {
+            color: var(--gold-dark);
+        }
+        .checkout-box p {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 22px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            background: var(--input-bg);
+            border: 1px solid rgba(0,0,0,0.06);
+            padding: 14px;
+            color: var(--text-dark);
+            font-size: 14px;
+            border-radius: 4px;
             transition: all 0.3s ease;
-            text-decoration: none;
         }
-        .whatsapp-floating:hover {
-            transform: scale(1.1);
-            background-color: #20ba5a;
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--gold);
+            outline: none;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
         }
-        .whatsapp-floating svg {
-            width: 32px;
-            height: 32px;
-            fill: #fff;
+        .btn-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: #000;
+            border: none;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+        }
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(212, 175, 55, 0.3);
         }
         footer {
-            background-color: #000;
+            background-color: #050505;
             color: #555;
             padding: 30px;
             text-align: center;
@@ -304,7 +382,7 @@
             .hero {
                 flex-direction: column;
                 text-align: center;
-                padding-top: 120px;
+                padding-top: 160px;
                 gap: 50px;
             }
             .hero-title {
@@ -313,9 +391,17 @@
             .cta-group {
                 justify-content: center;
             }
+            .product-display-frame {
+                width: 100%;
+                max-width: 350px;
+            }
             .product-placeholder {
-                width: 320px;
-                height: 350px;
+                width: 100%;
+                height: 400px;
+            }
+            .trust-section {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
@@ -323,74 +409,140 @@
 <body>
     <header>
         <div class="logo">HOUD</div>
-        <div class="shipping-badge">🚚 توصيل مجاني 69 ولاية</div>
+        <div class="shipping-badge">🚚 شحن مجاني</div>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <p class="hero-subtitle">عسل جبلي فاخر</p>
-            <h1 class="hero-title">طبيعة نقية <br>في <span>أفخم</span> صورة</h1>
-            <p class="hero-description">
-                عسل جبلي طبيعي 100%، مستخلص بعناية فائقة من أعالي الجبال،
-                يصل إليك بدفئه وفوائده مع خدمة توصيل مجاني إلى باب منزلك.
-            </p>
+            <p class="hero-subtitle">أصالة الطبيعة في كل قطرة</p>
+            <h1 class="hero-title">عسل <span>جبلي فاخر</span> مباشرة من قمم الأوراس</h1>
+            <p class="hero-description">عسل طبيعي 100%، مستخلص من زهور الجبال النادرة. نقدمه لك في عبوة ملكية تعكس فخامة المنتج مع ضمان الجودة الأصيلة.</p>
             <div class="cta-group">
-                <a href="https://wa.me/213663561135?text=سلام%20هود%2C%20حاب%20نطلب%20عسل%20جبلي%20فاخر%201%20كلغ%20مع%20التوصيل%20المجاني" target="_blank" class="btn-primary">
-                    📱 اطلب الآن عبر الواتساب
-                </a>
-                <span style="color:#ccc; font-size:14px;">أو امسح QR Code</span>
+                <button class="btn-primary" onclick="openCheckout()">✨ اطلب الآن واستلم عند الباب</button>
             </div>
         </div>
         <div class="hero-image-container">
             <div class="product-display-frame">
-                <div class="product-placeholder" title="صورة عبوة عسل HOUD الفاخرة"></div>
+                <div class="product-placeholder"></div>
             </div>
         </div>
     </section>
 
     <section class="features">
-        <h2 class="section-title">لماذا عسل HOUD؟</h2>
+        <h2 class="section-title">لماذا عسل HOUD هو اختيارك الأول؟</h2>
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">🍯</div>
-                <h3>طبيعي 100%</h3>
-                <p>عسل جبلي نقي غير مغشوش، معبأ في أجود العبوات الزجاجية للحفاظ على خصائصه الغذائية.</p>
+                <h3>نقاء 100%</h3>
+                <p>معصور على البارد دون أي إضافات أو مواد حافظة، ليحافظ على قيمته الغذائية الكاملة.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">🚀</div>
-                <h3>توصيل مجاني سريع</h3>
-                <p>نصلك أينما كنت في 69 ولاية، دون أي رسوم إضافية. الطلبية بين يديك في أقرب وقت.</p>
+                <div class="feature-icon">🏔️</div>
+                <h3>مناحل جبلية</h3>
+                <p>مناحلنا ترتفع عن 1200 متر، في بيئة نقية بعيداً عن التلوث والمبيدات.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">💳</div>
-                <h3>الدفع عند الاستلام</h3>
-                <p>لا تدفع شيئاً حتى تستلم طلبك وتتأكد بنفسك من جودة العسل الذي اخترناه لك بعناية.</p>
+                <div class="feature-icon">📦</div>
+                <h3>توصيل ملكي</h3>
+                <p>شحن سريع ومجاني إلى جميع الولايات مع تغليف فاخر يناسب قيمة المنتج.</p>
             </div>
         </div>
     </section>
 
     <section class="trust-section">
         <div class="trust-info">
-            <h2>امسح الكود واطلب مباشرة</h2>
-            <p>
-                استخدم كاميرا هاتفك لمسح رمز QR، وسيتم نقلك فوراً إلى محادثة واتساب مع علامة HOUD لتأكيد طلبك بسهولة.
-                خدمة عملاء راقية تليق بذوقك الرفيع.
-            </p>
+            <h2>موثوقية وجودة لا تضاهى</h2>
+            <p>كل عبوة من عسل HOUD تحمل رمز QR خاصاً يضمن مصدرها وتاريخ إنتاجها. نضمن لك تجربة فاخرة تليق بذائقتك الراقية.</p>
         </div>
         <div class="qr-container">
             <div class="qr-code"></div>
-            <p class="qr-text">HOUD • عسل جبلي فاخر</p>
+            <div class="qr-text">امسح للتحقق</div>
         </div>
     </section>
 
-    <a href="https://wa.me/213663561135?text=سلام%20هود%2C%20حاب%20نطلب%20عسل%20جبلي%20فاخر%201%20كلغ%20مع%20التوصيل%20المجاني" target="_blank" class="whatsapp-floating" title="تواصل معنا عبر واتساب">
-        <svg viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-    </a>
+    <!-- نافذة نموذج الطلب المنبثقة -->
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="checkout-box">
+            <button class="close-modal" onclick="closeCheckout()">✕</button>
+            <h2>طلب <span>عسل HOUD</span></h2>
+            <p>يرجى ملء البيانات التالية بدقة لتجهيز طلبك والاستفادة من الشحن المجاني</p>
+            <form onsubmit="submitToWhatsapp(event)">
+                <div class="form-group">
+                    <label>الاسم الكامل</label>
+                    <input type="text" id="username" required placeholder="أدخل اسمك الثلاثي">
+                </div>
+                <div class="form-group">
+                    <label>رقم الهاتف</label>
+                    <input type="tel" id="phone" required placeholder="رقم هاتفك للإتصال">
+                </div>
+                <div class="form-group">
+                    <label>الولاية</label>
+                    <input type="text" id="wilaya" required placeholder="مثال: الجزائر، وهران، قسنطينة...">
+                </div>
+                <div class="form-group">
+                    <label>العنوان الكامل (البلدية والحي)</label>
+                    <input type="text" id="address" required placeholder="العنوان التفصيلي للتوصيل">
+                </div>
+                <div class="form-group">
+                    <label>الكمية المطلوبة</label>
+                    <select id="quantity" required>
+                        <option value="عبوة واحدة ملكية (1 كجم)">عبوة واحدة ملكية (1 كجم)</option>
+                        <option value="عبوتين (2 كجم) - عرض التوفير">عبوتين (2 كجم) - عرض التوفير</option>
+                        <option value="3 عبوات فما فوق (طلب خاص)">3 عبوات فما فوق (طلب خاص)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">تأكيد الحجز عبر الواتساب</button>
+            </form>
+        </div>
+    </div>
 
     <footer>
-        &copy; 2026 HOUD Premium Honey. جميع الحقوق محفوظة لعلامة هود الفاخرة.
+        © 2026 HOUD Premium. جميع الحقوق محفوظة لعلامة هود الفاخرة.
     </footer>
+
+    <script>
+        function openCheckout() {
+            document.getElementById('checkoutModal').classList.add('active');
+        }
+
+        function closeCheckout() {
+            document.getElementById('checkoutModal').classList.remove('active');
+        }
+
+        // إغلاق النافذة عند الضغط خارج صندوق الإدخال
+        window.onclick = function(event) {
+            const modal = document.getElementById('checkoutModal');
+            if (event.target == modal) {
+                closeCheckout();
+            }
+        }
+
+        function submitToWhatsapp(event) {
+            event.preventDefault();
+
+            // جلب مدخلات الزبون من الاستمارة
+            const name = document.getElementById('username').value;
+            const phone = document.getElementById('phone').value;
+            const wilaya = document.getElementById('wilaya').value;
+            const address = document.getElementById('address').value;
+            const quantity = document.getElementById('quantity').value;
+
+            // رقم الواتساب الخاص بك لاستقبال الطلبات مباشرة
+            const myWhatsappNumber = "213663561135";
+
+            // بناء رسالة الفاتورة الرقمية المنظمة
+            const message = `طلب جديد لعسل HOUD الفاخر:%0A%0A` +
+                `👤 اسم الزبون: ${encodeURIComponent(name)}%0A` +
+                `📞 رقم الهاتف: ${encodeURIComponent(phone)}%0A` +
+                `📍 الولاية: ${encodeURIComponent(wilaya)}%0A` +
+                `🏠 العنوان: ${encodeURIComponent(address)}%0A` +
+                `📦 الكمية: ${encodeURIComponent(quantity)}%0A%0A` +
+                `✨ العرض المستفاد: شحن مجاني 100% والدفع عند الاستلام.`;
+
+            // تحويل الزبون إلى محادثة الواتساب مع الرسالة مجهزة تلقائياً
+            window.open(`https://wa.me/${myWhatsappNumber}?text=${message}`, '_blank');
+            closeCheckout();
+        }
+    </script>
 </body>
 </html>
