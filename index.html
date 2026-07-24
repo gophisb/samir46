@@ -3,546 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOUD | عسل جبلي فاخر</title>
+    <title>L'APICULTURE ROYALE | التميز في عالم العسل</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <!-- Animate.css For Soft Luxury Transitions -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@1&family=Marcellus&family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #0b0b0b;
-            --bg-light: #fcfbfa;
-            --gold: #d4af37;
-            --gold-dark: #aa841b;
-            --text-dark: #1c1c1c;
-            --text-muted: #666;
-            --accent-black: #151515;
-            --white: #ffffff;
-            --input-bg: #f7f5f2;
+            --lux-black: #0f0f10;
+            --lux-gold: #bca374;
+            --lux-cream: #faf7f2;
+            --lux-white: #ffffff;
+            --lux-muted: #8e8e93;
         }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Tajawal', sans-serif;
-        }
+
         body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
+            font-family: 'Alexandria', sans-serif;
+            background-color: var(--lux-cream);
+            color: var(--lux-black);
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
-        header {
-            background-color: rgba(11, 11, 11, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 20px 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-        }
-        .logo {
-            font-family: 'Marcellus', serif;
-            font-size: 28px;
-            color: var(--gold);
-            letter-spacing: 4px;
-            font-weight: bold;
-        }
-        .shipping-badge {
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-            color: #000;
-            padding: 6px 16px;
-            font-size: 13px;
-            font-weight: 700;
-            border-radius: 50px;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-        }
-        .hero {
-            background-color: var(--bg-dark);
-            min-height: 100vh;
-            padding: 140px 5% 60px 5%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.08), transparent 50%);
-            pointer-events: none;
-        }
-        .hero-content {
-            max-width: 550px;
-            z-index: 2;
-        }
-        .hero-subtitle {
+
+        .serif-title {
             font-family: 'Amiri', serif;
-            color: var(--gold);
-            font-size: 24px;
-            margin-bottom: 15px;
-            font-style: italic;
-        }
-        .hero-title {
-            color: #fff;
-            font-size: 48px;
-            font-weight: 300;
-            line-height: 1.3;
-            margin-bottom: 25px;
-        }
-        .hero-title span {
             font-weight: 700;
-            color: var(--gold);
         }
-        .hero-description {
-            color: #ccc;
-            font-size: 16px;
-            line-height: 1.8;
-            margin-bottom: 35px;
-            font-weight: 300;
+
+        .premium-nav {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            background-color: transparent;
         }
-        .cta-group {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-            color: #000;
-            padding: 16px 35px;
-            font-size: 16px;
-            font-weight: 700;
+
+        .nav-logo {
+            font-family: 'Amiri', serif;
+            font-size: 1.6rem;
+            letter-spacing: 3px;
+            color: var(--lux-black);
             text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
-            cursor: pointer;
-            border: none;
         }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+
+        .hero-advanced {
+            padding: 100px 0 60px 0;
         }
-        .hero-image-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            z-index: 2;
+
+        .tag-upper {
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            color: var(--lux-gold);
+            font-weight: 600;
         }
-        .product-display-frame {
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 20px;
-            background: rgba(255,255,255,0.02);
-            backdrop-filter: blur(5px);
-            border-radius: 8px;
-            position: relative;
+
+        .luxury-card {
+            background-color: var(--lux-white);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.02);
+            padding: 50px;
+            transition: transform 0.4s ease;
         }
-        .product-placeholder {
-            width: 380px;
-            height: 480px;
-            background: #111 url('https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
-            border-radius: 4px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-            transition: transform 0.5s ease;
-        }
-        .product-placeholder:hover {
-            transform: scale(1.02);
-        }
-        .features {
-            padding: 100px 5%;
-            background-color: var(--bg-light);
-            text-align: center;
-        }
-        .section-title {
-            font-size: 32px;
-            font-weight: 500;
-            margin-bottom: 60px;
-            position: relative;
-            padding-bottom: 20px;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 1px;
-            background-color: var(--gold);
-        }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-        }
-        .feature-card {
-            background: #fff;
-            padding: 40px 30px;
-            border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            border: 1px solid rgba(0,0,0,0.02);
-            transition: all 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(212, 175, 55, 0.3);
-        }
-        .feature-icon {
-            font-size: 35px;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-        .feature-card h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-        .feature-card p {
-            color: var(--text-muted);
-            font-size: 14px;
-            line-height: 1.7;
-        }
-        .trust-section {
-            background-color: var(--accent-black);
-            color: #fff;
-            padding: 80px 5%;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 40px;
-            border-top: 1px solid rgba(212, 175, 55, 0.1);
-        }
-        .trust-info {
-            max-width: 500px;
-        }
-        .trust-info h2 {
-            color: var(--gold);
-            font-size: 28px;
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
-        .trust-info p {
-            color: #aaa;
-            line-height: 1.8;
-            font-size: 15px;
-        }
-        .qr-container {
-            background: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            text-align: center;
-            display: inline-block;
-        }
-        .qr-code {
-            width: 140px;
-            height: 140px;
-            background: url('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://houdhoney.com') center/cover;
-        }
-        .qr-text {
-            color: #000;
-            font-size: 12px;
-            font-weight: bold;
-            margin-top: 8px;
-        }
-        /* نافذة الطلب المنبثقة */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.85);
-            backdrop-filter: blur(15px);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.4s ease;
-        }
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
+
         .checkout-box {
-            background: var(--white);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            width: 90%;
-            max-width: 500px;
-            padding: 40px 30px;
-            border-radius: 8px;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.4);
-            position: relative;
-            transform: translateY(30px);
-            transition: all 0.4s ease;
+            background-color: var(--lux-white);
+            border: 1px solid var(--lux-black);
+            padding: 50px;
         }
-        .modal-overlay.active .checkout-box {
-            transform: translateY(0);
+
+        .form-step-title {
+            font-size: 0.75rem;
+            color: var(--lux-gold);
+            letter-spacing: 2px;
+            font-weight: 600;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 8px;
         }
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: none;
+
+        .form-control-lux,
+        .form-select-lux {
             border: none;
-            color: var(--text-muted);
-            font-size: 26px;
-            cursor: pointer;
-            line-height: 1;
-        }
-        .checkout-box h2 {
-            font-size: 24px;
-            color: var(--text-dark);
-            margin-bottom: 8px;
-            text-align: center;
-            font-weight: 700;
-        }
-        .checkout-box h2 span {
-            color: var(--gold-dark);
-        }
-        .checkout-box p {
-            font-size: 14px;
-            color: var(--text-muted);
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .form-group {
-            margin-bottom: 22px;
-        }
-        .form-group label {
-            display: block;
-            font-size: 13px;
-            color: var(--text-dark);
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-        .form-group input,
-        .form-group select {
+            border-bottom: 1px solid #e0e0e0;
+            border-radius: 0;
+            padding: 12px 5px;
+            font-size: 0.9rem;
+            background-color: transparent;
+            color: var(--lux-black);
+            transition: border-color 0.3s;
             width: 100%;
-            background: var(--input-bg);
-            border: 1px solid rgba(0,0,0,0.06);
-            padding: 14px;
-            color: var(--text-dark);
-            font-size: 14px;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-        .form-group input:focus,
-        .form-group select:focus {
-            border-color: var(--gold);
             outline: none;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
         }
-        .btn-submit {
-            width: 100%;
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-            color: #000;
-            border: none;
-            padding: 16px;
-            font-size: 16px;
-            font-weight: 700;
-            border-radius: 4px;
+
+        .form-control-lux:focus,
+        .form-select-lux:focus {
+            outline: none;
+            border-bottom: 1px solid var(--lux-black);
+            box-shadow: none;
+        }
+
+        .btn-lux-primary {
+            background-color: var(--lux-black);
+            color: var(--lux-white);
+            border: 1px solid var(--lux-black);
+            border-radius: 0;
+            padding: 18px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
             cursor: pointer;
-            margin-top: 10px;
-            transition: all 0.3s;
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
         }
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 25px rgba(212, 175, 55, 0.3);
+
+        .btn-lux-primary:hover {
+            background-color: transparent;
+            color: var(--lux-black);
         }
-        footer {
-            background-color: #050505;
-            color: #555;
-            padding: 30px;
-            text-align: center;
-            font-size: 13px;
-            border-top: 1px solid #111;
+
+        .luxury-spec {
+            font-size: 0.85rem;
+            color: var(--lux-muted);
+            border-left: 1px solid #e0e0e0;
         }
-        @media (max-width: 968px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding-top: 160px;
-                gap: 50px;
+
+        .luxury-spec:last-child {
+            border-left: none;
+        }
+
+        @media (max-width: 767px) {
+            .luxury-spec {
+                border-left: none;
+                border-bottom: 1px solid #e0e0e0;
+                padding-bottom: 1rem;
+                margin-bottom: 1rem;
             }
-            .hero-title {
-                font-size: 36px;
-            }
-            .cta-group {
-                justify-content: center;
-            }
-            .product-display-frame {
-                width: 100%;
-                max-width: 350px;
-            }
-            .product-placeholder {
-                width: 100%;
-                height: 400px;
-            }
-            .trust-section {
-                flex-direction: column;
-                text-align: center;
+            .luxury-spec:last-child {
+                border-bottom: none;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">HOUD</div>
-        <div class="shipping-badge">🚚 شحن مجاني</div>
+    <!-- الهوية العلوية الدقيقة -->
+    <nav class="premium-nav py-4">
+        <div class="container text-center">
+            <a class="nav-logo text-uppercase" href="#">L'APICULTURE ROYALE</a>
+        </div>
+    </nav>
+
+    <!-- واجهة الدخول الناعمة -->
+    <header class="hero-advanced text-center animate__animated animate__fadeIn">
+        <div class="container">
+            <p class="tag-upper text-uppercase mb-3">Collection Privée • طبعة محدودة</p>
+            <h1 class="display-4 serif-title mb-4" style="max-width: 800px; margin: 0 auto; line-height: 1.4;">
+                نسيج العسل الجبلي النقي، مستخلص لأرقى الموائد الجزائريّة
+            </h1>
+            <p class="text-muted mx-auto mb-5" style="max-width: 550px; font-size: 0.95rem; line-height: 1.8;">
+                نحن لا ننتج العسل بكميات تجارية، بل نعتني بكل قطرة كتحفة حيوية فريدة مستخلصة من أعالي جبال جرجرة والبراري المحمية.
+            </p>
+        </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <p class="hero-subtitle">أصالة الطبيعة في كل قطرة</p>
-            <h1 class="hero-title">عسل <span>جبلي فاخر</span> مباشرة من قمم الأوراس</h1>
-            <p class="hero-description">عسل طبيعي 100%، مستخلص من زهور الجبال النادرة. نقدمه لك في عبوة ملكية تعكس فخامة المنتج مع ضمان الجودة الأصيلة.</p>
-            <div class="cta-group">
-                <button class="btn-primary" onclick="openCheckout()">✨ اطلب الآن واستلم عند الباب</button>
+    <!-- قسم العرض المتقدم للبيع المباشر -->
+    <section class="container my-4 pb-5">
+        <div class="row g-5 justify-content-center align-items-stretch">
+            <!-- لوحة المنتج: الفخامة الأوروبية القائمة على المساحات البيضاء المريحة -->
+            <div class="col-lg-5 animate__animated animate__fadeInLeft">
+                <div class="luxury-card h-100 d-flex flex-column justify-content-between">
+                    <div class="text-center my-4">
+                        <!-- رمز تعبيري دلالي يمثل العبوة الزجاجية، يمكن تغييره لاحقاً بصورة ستوديو حقيقية -->
+                        <span style="font-size: 6rem; filter: sepia(20%);">🍯</span>
+                    </div>
+                    <div>
+                        <div class="d-flex justify-content-between align-items-end mb-3">
+                            <div>
+                                <p class="text-uppercase small text-muted mb-1" style="font-size: 0.75rem;">Cuvée Impériale</p>
+                                <h2 class="serif-title h3 m-0">عسل السدر الملكي النادر</h2>
+                            </div>
+                            <div class="text-end">
+                                <span class="text-decoration-line-through text-muted small d-block">4,500 دج</span>
+                                <h3 class="fw-normal m-0" style="color: var(--lux-black); font-size: 1.7rem;">3,500 دج</h3>
+                            </div>
+                        </div>
+                        <p class="text-muted small mb-4" style="line-height: 1.8; text-align: justify;">
+                            يتميز بلونه العنبري الداكن وقدرته الاستثنائية على تعزيز الجهاز المناعي ومد الجسم بطاقة حيوية فورية ونقية. معبأ في عبوات زجاجية معتمة خاصة لحفظ الخصائص العلاجية المخبرية كاملة.
+                        </p>
+                        <div class="p-3 bg-light text-center small text-secondary">
+                            📦 التوصيل مؤمن ومجاني ومتاح لكافة البلديات والولايات الـ 58
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="hero-image-container">
-            <div class="product-display-frame">
-                <div class="product-placeholder"></div>
+
+            <!-- لوحة الحجز الفاخرة (توزيع الحقول خطي متقدم) -->
+            <div class="col-lg-5 animate__animated animate__fadeInRight">
+                <div class="checkout-box h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <h3 class="serif-title h4 mb-4 text-center text-uppercase">استمارة الحجز الفاخرة</h3>
+                        <form action="#" method="POST" id="luxuryOrderForm">
+                            <!-- الخطوة 1: الهوية -->
+                            <p class="form-step-title text-uppercase mb-3">01. بيانات الهوية والاتصال</p>
+                            <div class="mb-4">
+                                <input type="text" class="form-control-lux" placeholder="الاسم الكامل للطلب" required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="tel" class="form-control-lux text-start" placeholder="رقم الهاتف المحمول (06 / 07 / 05)" dir="ltr" required>
+                            </div>
+
+                            <!-- الخطوة 2: موقع الشحن والـ 58 ولاية المحدثة بالكامل -->
+                            <p class="form-step-title text-uppercase mb-3 mt-4">02. وجهة الشحن والتسليم</p>
+                            <div class="mb-4">
+                                <select class="form-select-lux" id="dzStates" required>
+                                    <option value="" selected disabled>اختر ولايتك الإدارية</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <input type="text" class="form-control-lux" placeholder="العنوان الدقيق (البلدية، الحي، أو الشارع)" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-lux-primary w-100 py-3 mt-4 text-uppercase">
+                                تأكيد الحجز الاستثنائي وتجهيز الشحن
+                            </button>
+                        </form>
+                    </div>
+                    <p class="text-center small text-muted mt-3 mb-0" style="font-size: 0.75rem;">
+                        🔐 نظام التجارة والبيانات مشفر بالكامل وآمن 100%.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="features">
-        <h2 class="section-title">لماذا عسل HOUD هو اختيارك الأول؟</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🍯</div>
-                <h3>نقاء 100%</h3>
-                <p>معصور على البارد دون أي إضافات أو مواد حافظة، ليحافظ على قيمته الغذائية الكاملة.</p>
+    <!-- الميزات الصامتة السفلية لترسيخ الفخامة (Minimal Specs) -->
+    <section class="container my-5 py-3 border-top border-bottom text-center">
+        <div class="row g-3">
+            <div class="col-md-4 luxury-spec">
+                <h4 class="h6 fw-bold mb-1">قطف تقليدي معتمد</h4>
+                <p class="text-muted small mb-0">نحمي خلايا النحل ونستخلص العسل برفق دون تسخين.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🏔️</div>
-                <h3>مناحل جبلية</h3>
-                <p>مناحلنا ترتفع عن 1200 متر، في بيئة نقية بعيداً عن التلوث والمبيدات.</p>
+            <div class="col-md-4 luxury-spec">
+                <h4 class="h6 fw-bold mb-1">المعاينة الكاملة عند الاستلام</h4>
+                <p class="text-muted small mb-0">افتح الطرد، عاين الجودة والكثافة، ثم ادفع بأمان.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">📦</div>
-                <h3>توصيل ملكي</h3>
-                <p>شحن سريع ومجاني إلى جميع الولايات مع تغليف فاخر يناسب قيمة المنتج.</p>
+            <div class="col-md-4 luxury-spec">
+                <h4 class="h6 fw-bold mb-1">إصدارات محدودة ومضمونة</h4>
+                <p class="text-muted small mb-0">كل دفعة تحمل شهادة تحليل مخبرية تضمن نقاءها.</p>
             </div>
         </div>
     </section>
 
-    <section class="trust-section">
-        <div class="trust-info">
-            <h2>موثوقية وجودة لا تضاهى</h2>
-            <p>كل عبوة من عسل HOUD تحمل رمز QR خاصاً يضمن مصدرها وتاريخ إنتاجها. نضمن لك تجربة فاخرة تليق بذائقتك الراقية.</p>
-        </div>
-        <div class="qr-container">
-            <div class="qr-code"></div>
-            <div class="qr-text">امسح للتحقق</div>
-        </div>
-    </section>
-
-    <!-- نافذة نموذج الطلب المنبثقة -->
-    <div class="modal-overlay" id="checkoutModal">
-        <div class="checkout-box">
-            <button class="close-modal" onclick="closeCheckout()">✕</button>
-            <h2>طلب <span>عسل HOUD</span></h2>
-            <p>يرجى ملء البيانات التالية بدقة لتجهيز طلبك والاستفادة من الشحن المجاني</p>
-            <form onsubmit="submitToWhatsapp(event)">
-                <div class="form-group">
-                    <label>الاسم الكامل</label>
-                    <input type="text" id="username" required placeholder="أدخل اسمك الثلاثي">
-                </div>
-                <div class="form-group">
-                    <label>رقم الهاتف</label>
-                    <input type="tel" id="phone" required placeholder="رقم هاتفك للإتصال">
-                </div>
-                <div class="form-group">
-                    <label>الولاية</label>
-                    <input type="text" id="wilaya" required placeholder="مثال: الجزائر، وهران، قسنطينة...">
-                </div>
-                <div class="form-group">
-                    <label>العنوان الكامل (البلدية والحي)</label>
-                    <input type="text" id="address" required placeholder="العنوان التفصيلي للتوصيل">
-                </div>
-                <div class="form-group">
-                    <label>الكمية المطلوبة</label>
-                    <select id="quantity" required>
-                        <option value="عبوة واحدة ملكية (1 كجم)">عبوة واحدة ملكية (1 كجم)</option>
-                        <option value="عبوتين (2 كجم) - عرض التوفير">عبوتين (2 كجم) - عرض التوفير</option>
-                        <option value="3 عبوات فما فوق (طلب خاص)">3 عبوات فما فوق (طلب خاص)</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn-submit">تأكيد الحجز عبر الواتساب</button>
-            </form>
-        </div>
-    </div>
-
-    <footer>
-        © 2026 HOUD Premium. جميع الحقوق محفوظة لعلامة هود الفاخرة.
+    <!-- تذييل الصفحة -->
+    <footer class="container text-center py-4">
+        <p class="small text-muted mb-0">© 2026 L'APICULTURE ROYALE. Premium Algerian Commerce.</p>
     </footer>
 
+    <!-- سكريبت حقن الـ 58 ولاية تلقائياً -->
     <script>
-        function openCheckout() {
-            document.getElementById('checkoutModal').classList.add('active');
-        }
+        const officialAlgerianStates = [
+            "01 - أدرار", "02 - الشلف", "03 - الأغواط", "04 - أم البواقي", "05 - باتنة", "06 - بجاية", "07 - بسكرة", "08 - بشار", "09 - البليدة", "10 - البويرة",
+            "11 - تمنراست", "12 - تبسة", "13 - تلمسان", "14 - تيارت", "15 - تيزي وزو", "16 - الجزائر", "17 - الجلفة", "18 - جيجل", "19 - سطيف", "20 - سعيدة",
+            "21 - سكيكدة", "22 - سيدي بلعباس", "23 - عنابة", "24 - قالمة", "25 - قسنطينة", "26 - المدية", "27 - مستغانم", "28 - المسيلة", "29 - معسكر", "30 - ورقلة",
+            "31 - وهران", "32 - البيض", "33 - إليزي", "34 - برج بوعريريج", "35 - بومرداس", "36 - الطارف", "37 - تندوف", "38 - تيسمسيلت", "39 - الوادي", "40 - خنشلة",
+            "41 - سوق أهراس", "42 - تيبازة", "43 - ميلة", "44 - عين الدفلى", "45 - النعامة", "46 - عين تموشنت", "47 - غرداية", "48 - غليزان",
+            "49 - تيميمون", "50 - برج باجي مختار", "51 - أولاد جلال", "52 - بني عباس", "53 - عين صالح", "54 - عين قزام", "55 - تقرت", "56 - المغير", "57 - المنيعة", "58 - جانت"
+        ];
 
-        function closeCheckout() {
-            document.getElementById('checkoutModal').classList.remove('active');
-        }
-
-        // إغلاق النافذة عند الضغط خارج صندوق الإدخال
-        window.onclick = function(event) {
-            const modal = document.getElementById('checkoutModal');
-            if (event.target == modal) {
-                closeCheckout();
-            }
-        }
-
-        function submitToWhatsapp(event) {
-            event.preventDefault();
-
-            // جلب مدخلات الزبون من الاستمارة
-            const name = document.getElementById('username').value;
-            const phone = document.getElementById('phone').value;
-            const wilaya = document.getElementById('wilaya').value;
-            const address = document.getElementById('address').value;
-            const quantity = document.getElementById('quantity').value;
-
-            // رقم الواتساب الخاص بك لاستقبال الطلبات مباشرة
-            const myWhatsappNumber = "213663561135";
-
-            // بناء رسالة الفاتورة الرقمية المنظمة
-            const message = `طلب جديد لعسل HOUD الفاخر:%0A%0A` +
-                `👤 اسم الزبون: ${encodeURIComponent(name)}%0A` +
-                `📞 رقم الهاتف: ${encodeURIComponent(phone)}%0A` +
-                `📍 الولاية: ${encodeURIComponent(wilaya)}%0A` +
-                `🏠 العنوان: ${encodeURIComponent(address)}%0A` +
-                `📦 الكمية: ${encodeURIComponent(quantity)}%0A%0A` +
-                `✨ العرض المستفاد: شحن مجاني 100% والدفع عند الاستلام.`;
-
-            // تحويل الزبون إلى محادثة الواتساب مع الرسالة مجهزة تلقائياً
-            window.open(`https://wa.me/${myWhatsappNumber}?text=${message}`, '_blank');
-            closeCheckout();
-        }
+        const selectElement = document.getElementById('dzStates');
+        officialAlgerianStates.forEach(state => {
+            let opt = document.createElement('option');
+            opt.value = state;
+            opt.textContent = state;
+            selectElement.appendChild(opt);
+        });
     </script>
 </body>
 </html>
