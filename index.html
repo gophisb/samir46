@@ -3,221 +3,402 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عسل هود | Hood Honey - الفخامة الملكية</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        gold: {
-                            50: '#fffdf5',
-                            100: '#fef7da',
-                            200: '#fdeca7',
-                            300: '#fbd967',
-                            400: '#f9c131',
-                            500: '#e59d1a',
-                            600: '#b87410',
-                            700: '#8a510b',
-                        },
-                        royal: {
-                            dark: '#0c0a06',
-                            card: '#16120b',
-                            border: '#3a2d1a'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <title>HOUD | عسل جبلي فاخر</title>
+    <!-- Google Fonts للخطوط الفاخرة -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@1&family=Marcellus&family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
+        :root {
+            --bg-dark: #0b0b0b;
+            --bg-light: #fcfbfa;
+            --gold: #d4af37;
+            --gold-dark: #aa841b;
+            --text-dark: #1c1c1c;
+            --text-muted: #666;
+            --accent-black: #151515;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
         body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #0c0a06;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
-        .glass-panel {
-            background: rgba(22, 18, 11, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+        /* الهيدر العلوي الفاخر */
+        header {
+            background-color: rgba(11, 11, 11, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
-        .glass-input {
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(184, 116, 16, 0.25);
+        .logo {
+            font-family: 'Marcellus', serif;
+            font-size: 28px;
+            color: var(--gold);
+            letter-spacing: 4px;
+            font-weight: bold;
         }
-        .glass-input:focus {
-            border-color: #f9c131;
-            box-shadow: 0 0 12px rgba(249, 193, 49, 0.2);
+        .shipping-badge {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: #000;
+            padding: 6px 16px;
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: 50px;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
         }
-        .gold-glow {
+        /* القسم الرئيسي (Hero Section) */
+        .hero {
+            background-color: var(--bg-dark);
+            min-height: 100vh;
+            padding: 140px 5% 60px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
             position: absolute;
-            width: 450px;
-            height: 450px;
-            background: radial-gradient(circle, rgba(229, 157, 26, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
-            filter: blur(40px);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.08), transparent 50%);
             pointer-events: none;
+        }
+        .hero-content {
+            max-width: 550px;
+            z-index: 2;
+        }
+        .hero-subtitle {
+            font-family: 'Amiri', serif;
+            color: var(--gold);
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        .hero-title {
+            color: #fff;
+            font-size: 48px;
+            font-weight: 300;
+            line-height: 1.3;
+            margin-bottom: 25px;
+        }
+        .hero-title span {
+            font-weight: 700;
+            color: var(--gold);
+        }
+        .hero-description {
+            color: #ccc;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+        /* أزرار العمليات */
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: #000;
+            padding: 16px 35px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+        }
+        /* موضع الصورة التعبيرية العالية الجودة */
+        .hero-image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        /* إطار يعاكي الفخامة الأوروبية بديل للصورة */
+        .product-display-frame {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 20px;
+            background: rgba(255,255,255,0.02);
+            backdrop-filter: blur(5px);
+            border-radius: 8px;
+            position: relative;
+        }
+        .product-placeholder {
+            width: 380px;
+            height: 480px;
+            background: #111 url('https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+            border-radius: 4px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            transition: transform 0.5s ease;
+        }
+        .product-placeholder:hover {
+            transform: scale(1.02);
+        }
+        /* قسم الميزات الفاخرة */
+        .features {
+            padding: 100px 5%;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+        .section-title {
+            font-size: 32px;
+            font-weight: 500;
+            margin-bottom: 60px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 1px;
+            background-color: var(--gold);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        .feature-card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        .feature-icon {
+            font-size: 35px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        /* قسم الثقة والـ QR Code */
+        .trust-section {
+            background-color: var(--accent-black);
+            color: #fff;
+            padding: 80px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 40px;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .trust-info {
+            max-width: 500px;
+        }
+        .trust-info h2 {
+            color: var(--gold);
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        .trust-info p {
+            color: #aaa;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+        .qr-container {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            text-align: center;
+            display: inline-block;
+        }
+        .qr-code {
+            width: 140px;
+            height: 140px;
+            background: url('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/213663561135?text=سلام%20هود%2C%20حاب%20نطلب%20عسل%20جبلي%20فاخر%201%20كلغ%20مع%20التوصيل%20المجاني') center/cover;
+        }
+        .qr-text {
+            color: #000;
+            font-size: 11px;
+            margin-top: 8px;
+            font-weight: bold;
+        }
+        /* زر الواتساب العائم */
+        .whatsapp-floating {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: #25d366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            z-index: 999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .whatsapp-floating:hover {
+            transform: scale(1.1);
+            background-color: #20ba5a;
+        }
+        .whatsapp-floating svg {
+            width: 32px;
+            height: 32px;
+            fill: #fff;
+        }
+        /* فوتر بسيط */
+        footer {
+            background-color: #000;
+            color: #555;
+            padding: 30px;
+            text-align: center;
+            font-size: 13px;
+            border-top: 1px solid #111;
+        }
+        /* التجاوب مع الهواتف الذكية */
+        @media (max-width: 968px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 120px;
+                gap: 50px;
+            }
+            .hero-title {
+                font-size: 36px;
+            }
+            .cta-group {
+                justify-content: center;
+            }
+            .product-placeholder {
+                width: 300px;
+                height: 380px;
+            }
         }
     </style>
 </head>
-<body class="text-gray-200 antialiased selection:bg-gold-500 selection:text-black min-h-screen relative overflow-x-hidden">
-    <div class="gold-glow top-[-100px] right-[-100px]"></div>
-    <div class="gold-glow bottom-[200px] left-[-100px]"></div>
-    <div class="bg-gradient-to-r from-gold-700 via-gold-500 to-gold-700 text-royal-dark text-center py-2 px-4 text-xs md:text-sm font-black tracking-wide shadow-xl relative z-50">
-        <i class="fa-solid fa-crown ml-1.5 animate-bounce"></i> إصدار محدود • التوصيل متوفر لكافة البلديات والولايات الـ 69 جزائرية <i class="fa-solid fa-truck-clock mr-1.5"></i>
-    </div>
-    <header class="border-b border-royal-border/60 glass-panel sticky top-0 z-50 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="text-center sm:text-right">
-                <div class="flex items-center gap-2.5 justify-center sm:justify-start">
-                    <span class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-gold-300 to-gold-500">عسل هود</span>
-                    <span class="text-gold-500 font-light text-xl">|</span>
-                    <span class="text-sm font-black text-gold-400 tracking-widest font-mono uppercase mt-1">Hood Honey</span>
-                </div>
-                <p class="text-[10px] text-gray-500 tracking-widest mt-0.5 uppercase">L'Apiculture Royale De Luxe</p>
-            </div>
-            <div class="flex items-center gap-6">
-                <div class="hidden md:flex items-center gap-4 text-xs font-semibold text-gray-400">
-                    <span><i class="fa-solid fa-shield-heart text-gold-500 ml-1"></i> طبيعي 100%</span>
-                    <span><i class="fa-solid fa-vial text-gold-500 ml-1"></i> مفحوص مخبرياً</span>
-                </div>
-                <a href="#order-section" class="bg-gradient-to-r from-gold-600 to-gold-400 hover:from-gold-500 hover:to-gold-300 text-royal-dark font-black px-6 py-2.5 rounded-xl shadow-lg transition-all duration-300 text-xs sm:text-sm transform hover:-translate-y-0.5">
-                    <i class="fa-solid fa-basket-shopping ml-1.5"></i> اطلب الآن
-                </a>
-            </div>
-        </div>
+<body>
+    <!-- هيدر الموقع -->
+    <header>
+        <div class="logo">HOUD</div>
+        <div class="shipping-badge">🚚 توصيل مجاني 58 ولاية</div>
     </header>
-    <main class="max-w-6xl mx-auto px-4 py-8 md:py-16 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-            <!-- القسم الأيمن -->
-            <div class="lg:col-span-6 space-y-8">
-                <div class="space-y-4">
-                    <div class="inline-flex items-center gap-2 bg-gold-500/10 border border-gold-500/20 px-3 py-1 rounded-full text-xs font-bold text-gold-400">
-                        <span class="w-1.5 h-1.5 rounded-full bg-gold-400 animate-ping"></span> عسل جبلي فاخر من مناحل هود
-                    </div>
-                    <h1 class="text-3xl md:text-5xl font-black text-white leading-tight">
-                        عسل السدر الملكي الفاخر <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-gold-600">من مناحل هود التجاري</span>
-                    </h1>
-                </div>
-                <div class="relative bg-gradient-to-b from-royal-card to-royal-dark border border-royal-border rounded-3xl p-6 overflow-hidden shadow-2xl group">
-                    <div class="absolute top-4 right-4 bg-red-600 text-white text-[11px] font-black px-3 py-1.5 rounded-full shadow-md z-20">
-                        الوزن الصافي: 1 كلغ
-                    </div>
-                    <div class="py-12 flex flex-col items-center justify-center relative">
-                        <i class="fa-solid fa-jar text-gold-500 text-9xl filter drop-shadow-[0_10px_25px_rgba(229,157,26,0.45)] transform group-hover:scale-105 transition duration-500"></i>
-                        <div class="mt-6 text-center space-y-1">
-                            <p class="text-xs uppercase tracking-widest text-gold-400 font-bold">HOOD HONEY</p>
-                            <p class="text-xs text-gray-500">L'APICULTURE ROYALE</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="space-y-4 text-gray-300 text-sm md:text-base leading-relaxed">
-                    <p class="border-r-2 border-gold-500 pr-4">
-                        يتميز بطعمه الغني الأصيل وقوامه المخملي الفريد، ويُقدّم كمنتج طبيعي فاخر للاستمتاع بجودة العسل الجزائري النقي المتوافق مع أرقى الأذواق والمعايير العالمية.
-                    </p>
-                </div>
-            </div>
-            <!-- القسم الأيسر: الحساب الذكي والولايات الـ 69 -->
-            <div id="order-section" class="lg:col-span-6 bg-royal-card border border-royal-border rounded-3xl p-6 md:p-8 shadow-2xl" x-data="checkoutApp()">
-                <div class="text-center mb-6">
-                    <h2 class="text-xl md:text-2xl font-black text-white">إستمارة الطلب السريع</h2>
-                    <p class="text-xs text-gray-400 mt-1">يرجى ملء البيانات التالية بدقة لتأكيد شحنتك الملكية</p>
-                </div>
-                <form @submit.prevent="sendToWhatsApp()" class="space-y-5">
-                    <div>
-                        <label class="block text-xs font-bold text-gold-400 mb-2"><i class="fa-solid fa-user ml-1"></i> الإسم الكامل</label>
-                        <input type="text" x-model="name" placeholder="مثال: محمد بن علي" class="w-full text-sm rounded-xl p-3.5 text-white glass-input outline-none transition" required>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-gold-400 mb-2"><i class="fa-solid fa-phone ml-1"></i> رقم الهاتف</label>
-                        <input type="tel" x-model="phone" placeholder="06XXXXXXXX أو 07XXXXXXXX" class="w-full text-sm rounded-xl p-3.5 text-white glass-input outline-none transition" dir="ltr" required>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-gold-400 mb-2"><i class="fa-solid fa-map-location-dot ml-1"></i> الولاية (69 ولاية)</label>
-                            <select x-model="selectedWilayaIndex" @change="calculateShipping()" class="w-full text-sm rounded-xl p-3.5 text-white glass-input outline-none transition cursor-pointer" required>
-                                <option value="" disabled selected class="text-royal-dark">اختر ولايتك</option>
-                                <template x-for="(wilaya, index) in wilayas" :key="index">
-                                    <option :value="index" x-text="wilaya.id + ' - ' + wilaya.name" class="text-royal-dark bg-white"></option>
-                                </template>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-gold-400 mb-2"><i class="fa-solid fa-map-pin ml-1"></i> البلدية / العنوان السكني</label>
-                            <input type="text" x-model="address" placeholder="مثال: الدار البيضاء" class="w-full text-sm rounded-xl p-3.5 text-white glass-input outline-none transition" required>
-                        </div>
-                    </div>
-                    <div class="bg-black/40 border border-royal-border/40 p-4 rounded-2xl space-y-2">
-                        <div class="flex justify-between items-center text-xs text-gray-400">
-                            <span>سعر العسل الجبلي الفاخر (1 كلغ):</span>
-                            <span class="font-bold text-white">4,500 د.ج</span>
-                        </div>
-                        <div class="flex justify-between items-center text-xs text-gray-400">
-                            <span>مصاريف التوصيل:</span>
-                            <span class="text-gold-400 font-bold" x-text="shippingCost > 0 ? shippingCost + ' د.ج' : 'حدد الولاية'"></span>
-                        </div>
-                        <div class="flex justify-between items-center text-sm font-black pt-2 border-t border-royal-border/40">
-                            <span class="text-white">المجموع الإجمالي الكلي:</span>
-                            <span class="text-gold-500 text-lg" x-text="totalPrice.toLocaleString() + ' د.ج'"></span>
-                        </div>
-                    </div>
-                    <button type="submit" class="w-full bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white font-black py-4 px-6 rounded-xl shadow-xl shadow-green-600/20 transition-all duration-300 text-sm transform hover:-translate-y-0.5">
-                        <i class="fa-brands fa-whatsapp ml-1.5"></i> تأكيد الطلب عبر الواتساب
-                    </button>
-                    <p class="text-center text-[10px] text-gray-600 leading-relaxed">
-                        عند الضغط على الطلب، سيتم نقلك إلى محادثة واتساب آمنة لتأكيد تفاصيل الشحن.
-                    </p>
-                </form>
+
+    <!-- قسم Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-subtitle">عسل جبلي فاخر</p>
+            <h1 class="hero-title">طبيعة نقية <br>في <span>أفخم</span> صورة</h1>
+            <p class="hero-description">
+                عسل جبلي طبيعي 100%، مستخلص بعناية فائقة من أعالي الجبال،
+                يصل إليك بدفئه وفوائده مع خدمة توصيل مجاني إلى باب منزلك.
+            </p>
+            <div class="cta-group">
+                <a href="https://wa.me/213663561135?text=سلام%20هود%2C%20حاب%20نطلب%20عسل%20جبلي%20فاخر%201%20كلغ%20مع%20التوصيل%20المجاني" target="_blank" class="btn-primary">
+                    📱 اطلب الآن عبر الواتساب
+                </a>
+                <span style="color:#ccc; font-size:14px;">أو امسح QR Code</span>
             </div>
         </div>
-    </main>
-    <footer class="border-t border-royal-border/50 mt-10 py-6 text-center">
-        <p class="text-xs text-gray-600">&copy; 2026 عسل هود - Hood Honey. جميع الحقوق محفوظة.</p>
-        <p class="text-[10px] text-gray-700 mt-1">Premium quality by Hood Trading • 69 ولاية جزائرية</p>
+        <div class="hero-image-container">
+            <div class="product-display-frame">
+                <!-- هنا ضع رابط الصورة الفاخرة التي اخترتها (الصورة الأولى) -->
+                <div class="product-placeholder" title="صورة عبوة عسل HOUD الفاخرة"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الميزات -->
+    <section class="features">
+        <h2 class="section-title">لماذا عسل HOUD؟</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🍯</div>
+                <h3>طبيعي 100%</h3>
+                <p>عسل جبلي نقي غير مغشوش، معبأ في أجود العبوات الزجاجية للحفاظ على خصائصه الغذائية.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>توصيل مجاني سريع</h3>
+                <p>نصلك أينما كنت في 58 ولاية، دون أي رسوم إضافية. الطلبية بين يديك في أقرب وقت.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💳</div>
+                <h3>الدفع عند الاستلام</h3>
+                <p>لا تدفع شيئاً حتى تستلم طلبك وتتأكد بنفسك من جودة العسل الذي اخترناه لك بعناية.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الثقة و QR Code -->
+    <section class="trust-section">
+        <div class="trust-info">
+            <h2>امسح الكود واطلب مباشرة</h2>
+            <p>
+                استخدم كاميرا هاتفك لمسح رمز QR، وسيتم نقلك فوراً إلى محادثة واتساب مع علامة HOUD لتأكيد طلبك بسهولة.
+                خدمة عملاء راقية تليق بذوقك الرفيع.
+            </p>
+        </div>
+        <div class="qr-container">
+            <div class="qr-code"></div>
+            <p class="qr-text">HOUD • عسل جبلي فاخر</p>
+        </div>
+    </section>
+
+    <!-- زر الواتساب العائم -->
+    <a href="https://wa.me/213663561135?text=سلام%20هود%2C%20حاب%20نطلب%20عسل%20جبلي%20فاخر%201%20كلغ%20مع%20التوصيل%20المجاني" target="_blank" class="whatsapp-floating" title="تواصل معنا عبر واتساب">
+        <svg viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+        © 2026 HOUD Premium Honey. جميع الحقوق محفوظة لعلامة هود الفاخرة.
     </footer>
-    <script>
-        function checkoutApp() {
-            return {
-                name: '',
-                phone: '',
-                address: '',
-                selectedWilayaIndex: '',
-                basePrice: 4500,
-                shippingCost: 0,
-                totalPrice: 4500,
-                whatsappNumber: '213676097640',
-                wilayas: [
-                    { id: "01", name: "أدرار", cost: 700 }, { id: "02", name: "الشلف", cost: 450 }, { id: "03", name: "الأغواط", cost: 500 }, { id: "04", name: "أم البواقي", cost: 450 }, { id: "05", name: "باتنة", cost: 450 }, { id: "06", name: "بجاية", cost: 450 }, { id: "07", name: "بسكرة", cost: 500 }, { id: "08", name: "بشار", cost: 700 }, { id: "09", name: "البليدة", cost: 350 }, { id: "10", name: "البويرة", cost: 400 },
-                    { id: "11", name: "تمنراست", cost: 800 }, { id: "12", name: "تبسة", cost: 450 }, { id: "13", name: "تلمسان", cost: 450 }, { id: "14", name: "تيارت", cost: 450 }, { id: "15", name: "تيزي وزو", cost: 400 }, { id: "16", name: "الجزائر", cost: 300 }, { id: "17", name: "الجلفة", cost: 450 }, { id: "18", name: "جيجل", cost: 450 }, { id: "19", name: "سطيف", cost: 400 }, { id: "20", name: "سعيدة", cost: 450 },
-                    { id: "21", name: "سكيكدة", cost: 450 }, { id: "22", name: "سيدي بلعباس", cost: 450 }, { id: "23", name: "عنابة", cost: 450 }, { id: "24", name: "قالمة", cost: 450 }, { id: "25", name: "قسنطينة", cost: 400 }, { id: "26", name: "المدية", cost: 400 }, { id: "27", name: "مستغانم", cost: 450 }, { id: "28", name: "المسيلة", cost: 450 }, { id: "29", name: "معسكر", cost: 450 }, { id: "30", name: "ورقلة", cost: 600 },
-                    { id: "31", name: "وهران", cost: 400 }, { id: "32", name: "البيض", cost: 550 }, { id: "33", name: "إليزي", cost: 800 }, { id: "34", name: "برج بوعريريج", cost: 400 }, { id: "35", name: "بومرداس", cost: 350 }, { id: "36", name: "الطارف", cost: 450 }, { id: "37", name: "تندوف", cost: 900 }, { id: "38", name: "تيسمسيلت", cost: 450 }, { id: "39", name: "الوادي", cost: 550 }, { id: "40", name: "خنشلة", cost: 450 },
-                    { id: "41", name: "سوق أهراس", cost: 450 }, { id: "42", name: "تيبازة", cost: 350 }, { id: "43", name: "ميلة", cost: 450 }, { id: "44", name: "عين الدفلى", cost: 400 }, { id: "45", name: "النعامة", cost: 550 }, { id: "46", name: "عين تموشنت", cost: 450 }, { id: "47", name: "غرداية", cost: 550 }, { id: "48", name: "غليزان", cost: 450 }, { id: "49", name: "تيميمون", cost: 700 }, { id: "50", name: "برج باجي مختار", cost: 900 },
-                    { id: "51", name: "أولاد جلال", cost: 500 }, { id: "52", name: "بني عباس", cost: 700 }, { id: "53", name: "عين صالح", cost: 800 }, { id: "54", name: "عين قزام", cost: 950 }, { id: "55", name: "تقرت", cost: 600 }, { id: "56", name: "جانت", cost: 900 }, { id: "57", name: "المغير", cost: 550 }, { id: "58", name: "المنيعة", cost: 600 }, { id: "59", name: "بوسعادة", cost: 450 }, { id: "60", name: "مسعد", cost: 500 },
-                    { id: "61", name: "أفلو", cost: 500 }, { id: "62", name: "العلمة", cost: 400 }, { id: "63", name: "عين وسارة", cost: 450 }, { id: "64", name: "قصر الشلالة", cost: 450 }, { id: "65", name: "بريكة", cost: 450 }, { id: "66", name: "شـلغوم العيد", cost: 450 }, { id: "67", name: "عين البيضاء", cost: 450 }, { id: "68", name: "مشرية", cost: 550 }, { id: "69", name: "الأبيض سيدي الشيخ", cost: 550 }
-                ],
-                calculateShipping() {
-                    let wilaya = this.wilayas[this.selectedWilayaIndex];
-                    if (wilaya) {
-                        this.shippingCost = wilaya.cost;
-                        this.totalPrice = this.basePrice + this.shippingCost;
-                    }
-                },
-                sendToWhatsApp() {
-                    let wilayaName = this.wilayas[this.selectedWilayaIndex].name;
-                    let text = `👑 *طلب جديد: عسل هود الملكي* 👑\n\n` +
-                               `👤 *الاسم:* ${this.name}\n` +
-                               `📞 *الهاتف:* ${this.phone}\n` +
-                               `📍 *الولاية:* ${wilayaName}\n` +
-                               `🏠 *البلدية/العنوان:* ${this.address}\n\n` +
-                               `📦 *المنتج:* عسل جبلي فاخر (1 كلغ)\n` +
-                               `💰 *الحساب الإجمالي:* ${this.totalPrice} د.ج (شامل الشحن)`;
-                    let url = `https://api.whatsapp.com/send?phone=${this.whatsappNumber}&text=${encodeURIComponent(text)}`;
-                    window.open(url, '_blank');
-                }
-            }
-        }
-    </script>
 </body>
 </html>
