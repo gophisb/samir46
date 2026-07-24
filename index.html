@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOUD | عسل جبلي فاخر</title>
-    <!-- Google Fonts للخطوط الفاخرة -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@1&family=Marcellus&family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
@@ -30,7 +29,6 @@
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
-        /* الهيدر العلوي الفاخر */
         header {
             background-color: rgba(11, 11, 11, 0.95);
             backdrop-filter: blur(10px);
@@ -61,7 +59,6 @@
             letter-spacing: 1px;
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
         }
-        /* القسم الرئيسي (Hero Section) */
         .hero {
             background-color: var(--bg-dark);
             min-height: 100vh;
@@ -110,7 +107,6 @@
             margin-bottom: 35px;
             font-weight: 300;
         }
-        /* أزرار العمليات */
         .cta-group {
             display: flex;
             gap: 20px;
@@ -135,7 +131,6 @@
             transform: translateY(-3px);
             box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
         }
-        /* موضع الصورة التعبيرية العالية الجودة */
         .hero-image-container {
             flex: 1;
             display: flex;
@@ -144,27 +139,35 @@
             position: relative;
             z-index: 2;
         }
-        /* إطار يعاكي الفخامة الأوروبية بديل للصورة */
         .product-display-frame {
             border: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 20px;
+            padding: 15px;
             background: rgba(255,255,255,0.02);
             backdrop-filter: blur(5px);
             border-radius: 8px;
-            position: relative;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.8);
         }
         .product-placeholder {
-            width: 380px;
-            height: 480px;
+            width: 420px;
+            height: 460px;
             background: #111 url('https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
-            border-radius: 4px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            border-radius: 6px;
             transition: transform 0.5s ease;
+            position: relative;
+        }
+        .product-placeholder::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.7));
+            border-radius: 6px;
         }
         .product-placeholder:hover {
             transform: scale(1.02);
         }
-        /* قسم الميزات الفاخرة */
         .features {
             padding: 100px 5%;
             background-color: var(--bg-light);
@@ -219,7 +222,6 @@
             font-size: 14px;
             line-height: 1.7;
         }
-        /* قسم الثقة والـ QR Code */
         .trust-section {
             background-color: var(--accent-black);
             color: #fff;
@@ -264,7 +266,6 @@
             margin-top: 8px;
             font-weight: bold;
         }
-        /* زر الواتساب العائم */
         .whatsapp-floating {
             position: fixed;
             bottom: 30px;
@@ -291,7 +292,6 @@
             height: 32px;
             fill: #fff;
         }
-        /* فوتر بسيط */
         footer {
             background-color: #000;
             color: #555;
@@ -300,7 +300,6 @@
             font-size: 13px;
             border-top: 1px solid #111;
         }
-        /* التجاوب مع الهواتف الذكية */
         @media (max-width: 968px) {
             .hero {
                 flex-direction: column;
@@ -315,20 +314,18 @@
                 justify-content: center;
             }
             .product-placeholder {
-                width: 300px;
-                height: 380px;
+                width: 320px;
+                height: 350px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- هيدر الموقع -->
     <header>
         <div class="logo">HOUD</div>
-        <div class="shipping-badge">🚚 توصيل مجاني 58 ولاية</div>
+        <div class="shipping-badge">🚚 توصيل مجاني 69 ولاية</div>
     </header>
 
-    <!-- قسم Hero -->
     <section class="hero">
         <div class="hero-content">
             <p class="hero-subtitle">عسل جبلي فاخر</p>
@@ -346,13 +343,11 @@
         </div>
         <div class="hero-image-container">
             <div class="product-display-frame">
-                <!-- هنا ضع رابط الصورة الفاخرة التي اخترتها (الصورة الأولى) -->
                 <div class="product-placeholder" title="صورة عبوة عسل HOUD الفاخرة"></div>
             </div>
         </div>
     </section>
 
-    <!-- قسم الميزات -->
     <section class="features">
         <h2 class="section-title">لماذا عسل HOUD؟</h2>
         <div class="features-grid">
@@ -364,7 +359,7 @@
             <div class="feature-card">
                 <div class="feature-icon">🚀</div>
                 <h3>توصيل مجاني سريع</h3>
-                <p>نصلك أينما كنت في 58 ولاية، دون أي رسوم إضافية. الطلبية بين يديك في أقرب وقت.</p>
+                <p>نصلك أينما كنت في 69 ولاية، دون أي رسوم إضافية. الطلبية بين يديك في أقرب وقت.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">💳</div>
@@ -374,7 +369,6 @@
         </div>
     </section>
 
-    <!-- قسم الثقة و QR Code -->
     <section class="trust-section">
         <div class="trust-info">
             <h2>امسح الكود واطلب مباشرة</h2>
@@ -389,16 +383,14 @@
         </div>
     </section>
 
-    <!-- زر الواتساب العائم -->
     <a href="https://wa.me/213663561135?text=سلام%20هود%2C%20حاب%20نطلب%20عسل%20جبلي%20فاخر%201%20كلغ%20مع%20التوصيل%20المجاني" target="_blank" class="whatsapp-floating" title="تواصل معنا عبر واتساب">
         <svg viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
     </a>
 
-    <!-- تذييل الصفحة -->
     <footer>
-        © 2026 HOUD Premium Honey. جميع الحقوق محفوظة لعلامة هود الفاخرة.
+        &copy; 2026 HOUD Premium Honey. جميع الحقوق محفوظة لعلامة هود الفاخرة.
     </footer>
 </body>
 </html>
