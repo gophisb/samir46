@@ -2,10 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0,
-          maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>عسل هود | HOUD HONEY – الفخامة الطبيعية الاستثنائية</title>
 
@@ -13,24 +10,30 @@
           content="عسل هود HOUD HONEY – عسل طبيعي فاخر بجودة استثنائية وتغليف أنيق. اطلب الآن مع توصيل إلى جميع الولايات الجزائرية.">
 
     <meta name="keywords"
-          content="عسل هود, HOUD HONEY, عسل جزائري, عسل طبيعي, عسل جبلي, عسل متعدد الأزهار, عسل فاخر">
+          content="عسل هود, HOUD HONEY, عسل جزائري, عسل طبيعي, عسل فاخر, عسل جبلي, عسل متعدد الأزهار">
 
     <meta name="theme-color" content="#0c0a07">
 
+    <link rel="canonical" href="https://houdhoney.com/">
+
     <!-- Open Graph -->
-    <meta property="og:title"
-          content="عسل هود | HOUD HONEY – الفخامة الطبيعية">
-
+    <meta property="og:title" content="عسل هود | HOUD HONEY">
     <meta property="og:description"
-          content="اكتشف تجربة عسل هود الفاخر – جودة طبيعية وتغليف أنيق وتوصيل إلى جميع الولايات الجزائرية.">
-
+          content="اكتشف تجربة عسل هود الفاخر – جودة طبيعية وتغليف أنيق مع توصيل إلى جميع الولايات الجزائرية.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://houdhoney.com/">
     <meta property="og:image"
           content="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=1200&q=85">
 
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="ar_DZ">
-
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="عسل هود | HOUD HONEY">
+    <meta name="twitter:description" content="الفخامة الطبيعية الاستثنائية">
+    <meta name="twitter:image"
+          content="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=1200&q=85">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,16 +42,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
           rel="stylesheet">
 
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "عسل هود الفاخر - HOUD HONEY",
+        "description": "عسل طبيعي فاخر بجودة استثنائية.",
+        "brand": {
+            "@type": "Brand",
+            "name": "HOUD HONEY"
+        },
+        "image": [
+            "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=1200&q=85"
+        ],
+        "sku": "HOUD-1KG",
+        "offers": {
+            "@type": "Offer",
+            "price": "4500",
+            "priceCurrency": "DZD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://houdhoney.com/"
+        }
+    }
+    </script>
 
     <style>
-
         :root {
             --bg: #0c0a07;
-            --bg-soft: #13110d;
+            --bg-light: #14110d;
+            --card: #13110d;
             --gold: #d4af37;
-            --gold-light: #f0d875;
+            --gold-light: #e6c65c;
             --text: #f5f2eb;
         }
 
@@ -65,129 +90,87 @@
             font-family: 'Cairo', sans-serif;
             background: var(--bg);
             color: var(--text);
-            overflow-x: hidden;
         }
 
-        .font-luxury {
+        .font-serif-eu {
             font-family: 'Playfair Display', serif;
         }
 
-        .gold {
+        .luxury-gradient {
+            background:
+                radial-gradient(circle at 50% 0%, rgba(212,175,55,.08), transparent 35%),
+                linear-gradient(180deg, #14110d 0%, #0c0a07 100%);
+        }
+
+        .gold-accent {
             color: var(--gold);
         }
 
-        .gold-gradient {
-            background:
-                linear-gradient(
-                    90deg,
-                    #b68f2c,
-                    #f0d875,
-                    #d4af37,
-                    #b68f2c
-                );
+        .btn-luxury {
+            background: linear-gradient(
+                90deg,
+                #b18e2c 0%,
+                #d4af37 50%,
+                #b18e2c 100%
+            );
+            transition: all .35s ease;
         }
 
-        .luxury-bg {
-            background:
-                radial-gradient(
-                    circle at top right,
-                    rgba(212,175,55,.08),
-                    transparent 35%
-                ),
-                linear-gradient(
-                    180deg,
-                    #14110d 0%,
-                    #0c0a07 100%
-                );
-        }
-
-        .glass {
-            background: rgba(19,17,13,.78);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border: 1px solid rgba(255,255,255,.07);
+        .btn-luxury:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.12);
+            box-shadow: 0 15px 40px rgba(212,175,55,.25);
         }
 
         .product-card {
-            background: #13110d;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.035),
+                    rgba(255,255,255,.01)
+                );
             border: 1px solid rgba(255,255,255,.06);
-            transition: .4s ease;
+            transition: all .4s ease;
         }
 
         .product-card:hover {
-            transform: translateY(-7px);
+            transform: translateY(-8px);
             border-color: rgba(212,175,55,.35);
-            box-shadow:
-                0 20px 50px rgba(0,0,0,.35);
+            box-shadow: 0 20px 60px rgba(0,0,0,.35);
         }
 
-        .luxury-btn {
-            background:
-                linear-gradient(
-                    90deg,
-                    #b68f2c,
-                    #d4af37,
-                    #f0d875,
-                    #b68f2c
-                );
-
-            color: #0c0a07;
-            transition: .3s ease;
+        .product-image {
+            transition: transform .6s ease;
         }
 
-        .luxury-btn:hover {
-            transform: translateY(-2px);
-            box-shadow:
-                0 12px 35px rgba(212,175,55,.25);
-            filter: brightness(1.08);
+        .product-card:hover .product-image {
+            transform: scale(1.05);
         }
 
-        .input-luxury {
-            width: 100%;
-            background: #0c0a07;
-            border: 1px solid rgba(255,255,255,.1);
-            color: white;
-            border-radius: 10px;
-            padding: 13px 15px;
-            outline: none;
-            transition: .3s ease;
-        }
-
-        .input-luxury:focus {
-            border-color: var(--gold);
-            box-shadow:
-                0 0 0 3px rgba(212,175,55,.08);
-        }
-
-        .hero-overlay {
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(12,10,7,.98) 0%,
-                    rgba(12,10,7,.72) 45%,
-                    rgba(12,10,7,.45) 100%
-                );
-        }
-
-        .whatsapp {
+        .whatsapp-float {
             position: fixed;
-            bottom: 24px;
-            left: 24px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: #25D366;
-            color: white;
+            bottom: 25px;
+            left: 25px;
+            z-index: 1000;
+
+            width: 62px;
+            height: 62px;
+
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 9999;
-            box-shadow:
-                0 12px 30px rgba(37,211,102,.3);
-            transition: .3s ease;
+
+            border-radius: 50%;
+
+            background: #25D366;
+            color: white;
+
+            box-shadow: 0 10px 30px rgba(37,211,102,.3);
+
+            transition: all .3s ease;
         }
 
-        .whatsapp:hover {
+        .whatsapp-float:hover {
             transform: scale(1.1);
         }
 
@@ -200,60 +183,61 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #d4af37;
+            background: var(--gold);
             border-radius: 10px;
         }
 
-        @media(max-width:768px) {
-
-            .hero-overlay {
-                background:
-                    linear-gradient(
-                        180deg,
-                        rgba(12,10,7,.72),
-                        rgba(12,10,7,.98)
-                    );
-            }
-
-            .whatsapp {
-                width: 55px;
-                height: 55px;
-                bottom: 18px;
-                left: 18px;
-            }
-
+        input,
+        select {
+            outline: none;
         }
 
+        input:focus,
+        select:focus {
+            border-color: var(--gold) !important;
+            box-shadow: 0 0 0 2px rgba(212,175,55,.08);
+        }
+
+        .hero-overlay {
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(12,10,7,.95),
+                    rgba(12,10,7,.65),
+                    rgba(12,10,7,.85)
+                );
+        }
     </style>
 </head>
 
-
-<body>
+<body class="antialiased">
 
 <!-- ================= HEADER ================= -->
 
-<header class="fixed top-0 right-0 left-0 z-50
-               bg-[#0c0a07]/85 backdrop-blur-xl
+<header class="sticky top-0 z-50
+               bg-[#0c0a07]/95 backdrop-blur-xl
                border-b border-white/5">
 
-    <div class="max-w-7xl mx-auto px-5 md:px-10
-                h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-6 md:px-12
+                py-5 flex items-center justify-between">
 
-        <a href="#home"
-           class="flex items-center gap-3">
+        <a href="#" class="flex items-center gap-4">
 
-            <span class="font-luxury text-3xl
-                         tracking-widest gold">
+            <span class="text-3xl md:text-4xl
+                         font-serif-eu
+                         tracking-[.15em]
+                         gold-accent">
                 HOUD
             </span>
 
             <span class="hidden sm:block
-                         text-zinc-300 text-sm">
+                         border-r border-white/10
+                         pr-4
+                         text-zinc-300">
                 عسل هود
             </span>
 
         </a>
-
 
         <nav class="hidden md:flex items-center gap-10
                     text-sm text-zinc-400">
@@ -275,11 +259,16 @@
 
         </nav>
 
-
         <a href="#order"
-           class="luxury-btn px-5 py-2.5
-                  rounded-full text-xs font-bold">
+           class="btn-luxury
+                  text-black
+                  px-5 py-2.5
+                  rounded-full
+                  text-sm
+                  font-bold">
+
             اطلب الآن
+
         </a>
 
     </div>
@@ -289,77 +278,84 @@
 
 <!-- ================= HERO ================= -->
 
-<section id="home"
-         class="relative min-h-screen
-                flex items-center overflow-hidden">
+<section class="relative min-h-[85vh]
+                flex items-center
+                overflow-hidden">
 
+    <!-- صورة خلفية عسل حقيقية -->
     <img
         src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=2000&q=85"
-        alt="عسل هود الفاخر"
-        class="absolute inset-0 w-full h-full
-               object-cover">
+        alt="عسل طبيعي فاخر"
+        class="absolute inset-0
+               w-full h-full
+               object-cover
+               brightness-[0.28]"
+    >
 
     <div class="absolute inset-0 hero-overlay"></div>
 
-
     <div class="relative z-10
-                max-w-7xl mx-auto w-full
+                max-w-7xl mx-auto
+                w-full
                 px-6 md:px-12
-                pt-28">
+                py-24">
 
-        <div class="max-w-2xl">
+        <div class="max-w-3xl">
 
             <span class="inline-block
-                         px-4 py-2 mb-6
+                         px-5 py-2
                          rounded-full
+                         border border-[#d4af37]/30
                          bg-[#d4af37]/10
-                         border border-[#d4af37]/20
                          text-[#d4af37]
-                         text-xs">
+                         text-xs
+                         mb-7">
 
                 ✦ تجربة طبيعية استثنائية
 
             </span>
 
-
-            <h1 class="font-luxury
-                       text-5xl md:text-7xl
+            <h1 class="font-serif-eu
+                       text-5xl
+                       sm:text-6xl
+                       md:text-8xl
                        leading-tight
                        text-white">
 
                 L'Essence Pure
 
-                <span class="block
-                             text-3xl md:text-5xl
-                             font-sans
-                             font-bold
-                             gold
-                             mt-4">
-
-                    عسل هُــود الملكي
-
-                </span>
-
             </h1>
 
+            <h2 class="mt-4
+                       text-3xl
+                       sm:text-5xl
+                       md:text-6xl
+                       font-bold
+                       gold-accent">
+
+                عسل هود الملكي
+
+            </h2>
 
             <p class="mt-7
+                      max-w-2xl
                       text-zinc-300
-                      leading-8
-                      text-base md:text-lg">
+                      text-base
+                      md:text-lg
+                      leading-loose">
 
-                اكتشف تجربة مختلفة مع عسل هود،
-                حيث تلتقي جودة الطبيعة مع
-                الأناقة والفخامة في كل عبوة.
+                اكتشف مذاق العسل الطبيعي في تجربة تجمع بين
+                الجودة، النقاء، والأناقة.
+                اختر عبوتك المفضلة واستمتع بتجربة HOUD HONEY.
 
             </p>
 
-
-            <div class="flex flex-wrap gap-4 mt-9">
+            <div class="mt-10 flex flex-wrap gap-4">
 
                 <a href="#order"
-                   class="luxury-btn
-                          px-8 py-4
+                   class="btn-luxury
+                          text-black
+                          px-9 py-4
                           rounded-xl
                           font-bold">
 
@@ -367,9 +363,8 @@
 
                 </a>
 
-
                 <a href="#products"
-                   class="px-8 py-4
+                   class="px-9 py-4
                           rounded-xl
                           border border-white/20
                           hover:border-[#d4af37]
@@ -391,118 +386,140 @@
 <!-- ================= PRODUCTS ================= -->
 
 <section id="products"
-         class="py-24 px-6 luxury-bg">
+         class="py-24 px-6 md:px-12
+                luxury-gradient">
 
     <div class="max-w-6xl mx-auto">
 
         <div class="text-center mb-16">
 
-            <span class="gold
-                         font-luxury
-                         tracking-widest">
+            <span class="gold-accent
+                         text-xs
+                         tracking-[.3em]
+                         uppercase">
 
-                LA SÉLECTION ROYALE
+                HOUD HONEY COLLECTION
 
             </span>
 
-            <h2 class="text-3xl md:text-4xl
-                       mt-4 font-light">
+            <h2 class="mt-4
+                       text-3xl
+                       md:text-5xl
+                       font-light">
 
-                مجموعة عسل هود
+                مجموعتنا الخاصة
 
             </h2>
 
-            <p class="text-zinc-500 mt-4">
-                اختر المنتج الذي يناسب ذوقك
-            </p>
+            <div class="w-20 h-px
+                        bg-[#d4af37]/50
+                        mx-auto mt-6">
+            </div>
 
         </div>
 
 
-        <div class="grid md:grid-cols-2
-                    gap-8">
+        <div class="grid
+                    grid-cols-1
+                    md:grid-cols-2
+                    gap-10">
 
 
             <!-- PRODUCT 1 -->
 
             <div class="product-card
-                        rounded-3xl p-7">
+                        rounded-3xl
+                        p-7
+                        overflow-hidden">
 
-                <div class="relative">
+                <div class="relative
+                            h-80
+                            rounded-2xl
+                            overflow-hidden
+                            bg-[#080706]">
 
-                    <span class="absolute
-                                 top-4 right-4
-                                 z-10
+                    <img
+                        src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=1000&q=85"
+                        alt="عبوة عسل فاخر"
+                        class="product-image
+                               w-full h-full
+                               object-cover"
+                    >
+
+                    <span class="absolute top-5 right-5
                                  bg-[#d4af37]
                                  text-black
-                                 px-3 py-1
+                                 px-4 py-2
                                  rounded-full
-                                 text-xs font-bold">
+                                 text-xs
+                                 font-bold">
 
-                        الأكثر طلبًا
+                        الأكثر طلباً
 
                     </span>
 
-
-                    <img
-                        src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=800&q=85"
-                        alt="عسل جبلي فاخر"
-                        class="w-full h-72
-                               object-cover
-                               rounded-2xl">
-
                 </div>
 
-
-                <h3 class="text-2xl
+                <h3 class="mt-7
+                           text-2xl
                            font-bold
-                           text-center mt-6">
+                           text-center">
 
                     عسل جبلي فاخر
 
                 </h3>
 
-
                 <p class="text-center
                           text-zinc-500
-                          text-sm mt-2">
+                          text-sm
+                          mt-2">
 
                     Premium Mountain Honey
 
                 </p>
 
-
                 <div class="text-center mt-5">
 
                     <span class="text-3xl
-                                 font-bold gold">
+                                 font-bold
+                                 gold-accent">
 
                         4500 دج
 
                     </span>
 
+                    <span class="mr-3
+                                 text-zinc-600
+                                 line-through">
+
+                        5500 دج
+
+                    </span>
+
                 </div>
 
-
                 <p class="text-center
-                          text-zinc-500
-                          text-sm mt-3">
+                          text-zinc-400
+                          text-sm
+                          mt-3">
 
-                    عبوة 1 كلغ
+                    عبوة 1 كلغ صافي
 
                 </p>
 
-
                 <button
                     onclick="selectProduct('عسل جبلي فاخر')"
-                    class="luxury-btn
-                           w-full
+                    class="w-full
+                           mt-7
                            py-4
                            rounded-xl
-                           mt-6
-                           font-bold">
+                           bg-[#d4af37]
+                           text-black
+                           font-bold
+                           hover:brightness-110
+                           transition">
 
-                    اطلب هذا المنتج
+                    احجز المنتج
 
                 </button>
 
@@ -512,83 +529,98 @@
             <!-- PRODUCT 2 -->
 
             <div class="product-card
-                        rounded-3xl p-7">
+                        rounded-3xl
+                        p-7
+                        overflow-hidden">
 
-                <div class="relative">
+                <div class="relative
+                            h-80
+                            rounded-2xl
+                            overflow-hidden
+                            bg-[#080706]">
 
-                    <span class="absolute
-                                 top-4 right-4
-                                 z-10
+                    <img
+                        src="https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=1000&q=85"
+                        alt="عسل طبيعي فاخر"
+                        class="product-image
+                               w-full h-full
+                               object-cover"
+                    >
+
+                    <span class="absolute top-5 right-5
                                  bg-[#d4af37]
                                  text-black
-                                 px-3 py-1
+                                 px-4 py-2
                                  rounded-full
-                                 text-xs font-bold">
+                                 text-xs
+                                 font-bold">
 
-                        إصدار خاص
+                        اختيار مميز
 
                     </span>
 
-
-                    <img
-                        src="https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=800&q=85"
-                        alt="عسل متعدد الأزهار"
-                        class="w-full h-72
-                               object-cover
-                               rounded-2xl">
-
                 </div>
 
-
-                <h3 class="text-2xl
+                <h3 class="mt-7
+                           text-2xl
                            font-bold
-                           text-center mt-6">
+                           text-center">
 
-                    عسل متعدد الأزهار
+                    عسل متعدد الأزهار فاخر
 
                 </h3>
 
-
                 <p class="text-center
                           text-zinc-500
-                          text-sm mt-2">
+                          text-sm
+                          mt-2">
 
                     Premium Polyfloral Honey
 
                 </p>
 
-
                 <div class="text-center mt-5">
 
                     <span class="text-3xl
-                                 font-bold gold">
+                                 font-bold
+                                 gold-accent">
 
                         4500 دج
 
                     </span>
 
+                    <span class="mr-3
+                                 text-zinc-600
+                                 line-through">
+
+                        5500 دج
+
+                    </span>
+
                 </div>
 
-
                 <p class="text-center
-                          text-zinc-500
-                          text-sm mt-3">
+                          text-zinc-400
+                          text-sm
+                          mt-3">
 
-                    عبوة 1 كلغ
+                    عبوة 1 كلغ صافي
 
                 </p>
 
-
                 <button
                     onclick="selectProduct('عسل متعدد الأزهار فاخر')"
-                    class="luxury-btn
-                           w-full
+                    class="w-full
+                           mt-7
                            py-4
                            rounded-xl
-                           mt-6
-                           font-bold">
+                           bg-[#d4af37]
+                           text-black
+                           font-bold
+                           hover:brightness-110
+                           transition">
 
-                    اطلب هذا المنتج
+                    احجز المنتج
 
                 </button>
 
@@ -604,88 +636,104 @@
 <!-- ================= TRUST ================= -->
 
 <section id="trust"
-         class="py-24 px-6
+         class="py-24 px-6 md:px-12
                 bg-[#110f0b]
                 border-y border-white/5">
 
-    <div class="max-w-6xl mx-auto
-                grid md:grid-cols-3 gap-10">
+    <div class="max-w-7xl mx-auto">
 
+        <div class="text-center mb-16">
 
-        <div class="text-center">
+            <span class="gold-accent text-sm">
+                HOUD QUALITY
+            </span>
 
-            <div class="gold
-                        font-luxury
-                        text-4xl">
-                01
-            </div>
-
-            <h3 class="mt-4
-                       text-xl font-bold">
-                جودة طبيعية
-            </h3>
-
-            <p class="text-zinc-500
-                      text-sm
-                      leading-7
-                      mt-3">
-                نحرص على تقديم منتج
-                بجودة عالية وتجربة
-                تليق بعشاق العسل.
-            </p>
+            <h2 class="text-3xl md:text-4xl mt-3">
+                لماذا عسل هود؟
+            </h2>
 
         </div>
 
 
-        <div class="text-center
-                    border-y md:border-y-0
-                    md:border-x
-                    border-white/5
-                    py-8 md:py-0">
+        <div class="grid
+                    grid-cols-1
+                    md:grid-cols-3
+                    gap-10">
 
-            <div class="gold
-                        font-luxury
-                        text-4xl">
-                02
+
+            <div class="text-center p-8">
+
+                <div class="text-4xl gold-accent
+                            font-serif-eu">
+                    01
+                </div>
+
+                <h3 class="text-xl mt-5 font-bold">
+                    جودة طبيعية
+                </h3>
+
+                <p class="text-zinc-400
+                          text-sm
+                          leading-loose
+                          mt-4">
+
+                    نحرص على تقديم منتج يتمتع
+                    بجودة عالية وتجربة طبيعية مميزة.
+
+                </p>
+
             </div>
 
-            <h3 class="mt-4
-                       text-xl font-bold">
-                تغليف أنيق
-            </h3>
 
-            <p class="text-zinc-500
-                      text-sm
-                      leading-7
-                      mt-3">
-                عناية بالتفاصيل
-                وتصميم أنيق يمنحك
-                تجربة مميزة.
-            </p>
+            <div class="text-center p-8
+                        border-y md:border-y-0
+                        md:border-x
+                        border-white/5">
 
-        </div>
+                <div class="text-4xl gold-accent
+                            font-serif-eu">
+                    02
+                </div>
 
+                <h3 class="text-xl mt-5 font-bold">
+                    تغليف أنيق
+                </h3>
 
-        <div class="text-center">
+                <p class="text-zinc-400
+                          text-sm
+                          leading-loose
+                          mt-4">
 
-            <div class="gold
-                        font-luxury
-                        text-4xl">
-                03
+                    تصميم فاخر يليق بجودة المنتج
+                    ويمنحك تجربة شراء مميزة.
+
+                </p>
+
             </div>
 
-            <h3 class="mt-4
-                       text-xl font-bold">
-                خدمة مباشرة
-            </h3>
 
-            <p class="text-zinc-500
-                      text-sm
-                      leading-7
-                      mt-3">
-                تواصل مباشر عبر واتساب
-                لتأكيد طلبك ومتابعته.
-            </p>
+            <div class="text-center p-8">
+
+                <div class="text-4xl gold-accent
+                            font-serif-eu">
+                    03
+                </div>
+
+                <h3 class="text-xl mt-5 font-bold">
+                    خدمة مميزة
+                </h3>
+
+                <p class="text-zinc-400
+                          text-sm
+                          leading-loose
+                          mt-4">
+
+                    نتابع طلبك ونتواصل معك لتأكيد
+                    معلومات الشحن والتوصيل.
+
+                </p>
+
+            </div>
 
         </div>
 
@@ -697,146 +745,128 @@
 <!-- ================= ORDER ================= -->
 
 <section id="order"
-         class="py-24 px-6 luxury-bg">
+         class="py-24 px-6 md:px-12
+                luxury-gradient">
 
-    <div class="max-w-6xl mx-auto
-                grid lg:grid-cols-2
-                gap-14">
+    <div class="max-w-6xl mx-auto">
 
-
-        <div class="glass
-                    rounded-3xl
-                    p-7 md:p-10">
-
-            <h2 class="text-2xl
-                       font-bold
-                       text-center">
-
-                اطلب عسل هود
-
-            </h2>
-
-            <p class="text-center
-                      text-zinc-500
-                      text-sm mt-2">
-
-                املأ البيانات وسنرسل طلبك
-                مباشرة إلى واتساب
-
-            </p>
+        <div class="grid
+                    grid-cols-1
+                    lg:grid-cols-2
+                    gap-14">
 
 
-            <form id="orderForm"
-                  class="space-y-5 mt-8">
+            <div class="bg-[#13110d]
+                        p-7 md:p-10
+                        rounded-3xl
+                        border border-white/5">
+
+                <h2 class="text-3xl
+                           text-center
+                           font-serif-eu">
+
+                    أكمل طلبك
+
+                </h2>
+
+                <p class="text-center
+                          text-zinc-500
+                          text-sm
+                          mt-3
+                          mb-8">
+
+                    سنقوم بالتواصل معك لتأكيد الطلب
+
+                </p>
 
 
-                <div>
+                <form id="luxuryOrderForm"
+                      class="space-y-5">
 
-                    <label class="text-xs
-                                  text-zinc-500">
-                        الاسم الكامل
-                    </label>
 
                     <input
+                        type="text"
                         id="client_name"
-                        type="text"
                         required
-                        class="input-luxury mt-2"
-                        placeholder="أدخل اسمك الكامل">
+                        placeholder="الاسم الكامل"
+                        class="w-full
+                               bg-[#0c0a07]
+                               border border-white/10
+                               rounded-xl
+                               px-5 py-4
+                               text-white"
+                    >
 
-                </div>
-
-
-                <div>
-
-                    <label class="text-xs
-                                  text-zinc-500">
-                        رقم الهاتف
-                    </label>
 
                     <input
-                        id="client_phone"
                         type="tel"
+                        id="client_phone"
                         required
-                        class="input-luxury mt-2"
-                        placeholder="مثال: 0663561135">
+                        inputmode="tel"
+                        placeholder="رقم الهاتف: 0663561135"
+                        class="w-full
+                               bg-[#0c0a07]
+                               border border-white/10
+                               rounded-xl
+                               px-5 py-4
+                               text-white"
+                    >
 
-                </div>
-
-
-                <div>
-
-                    <label class="text-xs
-                                  text-zinc-500">
-                        المنتج
-                    </label>
-
-                    <select
-                        id="honeyType"
-                        class="input-luxury mt-2">
-
-                        <option>
-                            عسل جبلي فاخر
-                        </option>
-
-                        <option>
-                            عسل متعدد الأزهار فاخر
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div>
-
-                    <label class="text-xs
-                                  text-zinc-500">
-                        الولاية
-                    </label>
-
-                    <select
-                        id="wilaya"
-                        required
-                        class="input-luxury mt-2">
-
-                        <option value="">
-                            اختر ولايتك
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div>
-
-                    <label class="text-xs
-                                  text-zinc-500">
-                        العنوان الكامل
-                    </label>
 
                     <input
-                        id="client_address"
                         type="text"
+                        id="honeyType"
+                        value="عسل جبلي فاخر"
+                        readonly
+                        class="w-full
+                               bg-[#0c0a07]
+                               border border-white/10
+                               rounded-xl
+                               px-5 py-4
+                               text-white"
+                    >
+
+
+                    <input
+                        type="text"
+                        id="wilaya_search"
+                        list="wilayas"
                         required
-                        class="input-luxury mt-2"
-                        placeholder="الحي، الشارع، رقم المنزل">
+                        placeholder="اختر الولاية"
+                        class="w-full
+                               bg-[#0c0a07]
+                               border border-white/10
+                               rounded-xl
+                               px-5 py-4
+                               text-white"
+                    >
 
-                </div>
+                    <datalist id="wilayas"></datalist>
 
 
-                <div>
+                    <input
+                        type="text"
+                        id="client_address"
+                        required
+                        placeholder="العنوان الكامل"
+                        class="w-full
+                               bg-[#0c0a07]
+                               border border-white/10
+                               rounded-xl
+                               px-5 py-4
+                               text-white"
+                    >
 
-                    <label class="text-xs
-                                  text-zinc-500">
-                        الكمية
-                    </label>
 
                     <select
-                        id="quantity"
-                        class="input-luxury mt-2"
-                        onchange="calculateTotal()">
+                        id="product_quantity"
+                        onchange="calculateTotal()"
+                        class="w-full
+                               bg-[#0c0a07]
+                               border border-white/10
+                               rounded-xl
+                               px-5 py-4
+                               text-white">
 
                         <option value="1">
                             1 عبوة — 4500 دج
@@ -852,101 +882,100 @@
 
                     </select>
 
-                </div>
+
+                    <div class="p-6
+                                rounded-2xl
+                                bg-[#0c0a07]
+                                border border-white/5
+                                flex justify-between
+                                items-center">
+
+                        <span class="text-zinc-400">
+                            المجموع
+                        </span>
+
+                        <strong id="final_total_display"
+                                class="text-2xl
+                                       gold-accent">
+
+                            4500 دج
+
+                        </strong>
+
+                    </div>
 
 
-                <div class="bg-[#0c0a07]
-                            rounded-xl
-                            p-5
-                            flex justify-between">
+                    <button
+                        type="submit"
+                        class="w-full
+                               btn-luxury
+                               text-black
+                               py-4
+                               rounded-xl
+                               font-bold">
 
-                    <span class="text-zinc-500">
-                        المجموع
-                    </span>
+                        تأكيد الطلب
 
-                    <strong id="total"
-                            class="gold text-xl">
+                    </button>
 
-                        4500 دج
+                </form>
 
-                    </strong>
-
-                </div>
-
-
-                <button
-                    type="submit"
-                    class="luxury-btn
-                           w-full
-                           py-4
-                           rounded-xl
-                           font-bold">
-
-                    تأكيد الطلب عبر واتساب
-
-                </button>
-
-            </form>
-
-        </div>
+            </div>
 
 
-        <div class="flex
-                    flex-col
-                    justify-center">
+            <div class="flex
+                        flex-col
+                        justify-center">
 
-            <span class="gold
-                         font-luxury
-                         tracking-widest">
+                <span class="gold-accent
+                             text-sm
+                             tracking-widest">
 
-                HOUD HONEY
+                    HOUD HONEY
 
-            </span>
-
-
-            <h2 class="text-4xl
-                       md:text-5xl
-                       font-luxury
-                       mt-5
-                       leading-tight">
-
-                تجربة تبدأ
-                <span class="gold">
-                    من الطبيعة
                 </span>
 
-            </h2>
+                <h2 class="text-4xl
+                           md:text-5xl
+                           font-serif-eu
+                           mt-4">
 
+                    تجربة تستحق أن تُعاش
 
-            <p class="text-zinc-400
-                      leading-8
-                      mt-6">
+                </h2>
 
-                اختر منتجك، أدخل بياناتك،
-                واضغط على تأكيد الطلب.
-                سيتم فتح واتساب مباشرة
-                برسالة تحتوي على تفاصيل
-                طلبك كاملة.
+                <p class="text-zinc-400
+                          leading-loose
+                          mt-6">
 
-            </p>
+                    لأن العسل ليس مجرد منتج،
+                    بل تجربة تبدأ من الجودة
+                    وتكتمل بطريقة التقديم والخدمة.
 
+                </p>
 
-            <div class="mt-8
-                        space-y-4">
+                <div class="mt-8 space-y-5">
 
-                <div class="flex gap-3">
-                    <span class="gold">✦</span>
-                    <span>طلب مباشر وسهل</span>
-                </div>
+                    <div class="flex gap-4">
+                        <span class="gold-accent">✦</span>
+                        <span>جودة طبيعية مميزة</span>
+                    </div>
 
-                <div class="flex gap-3">
-                    <span class="gold">✦</span>
-                    <span>تأكيد الطلب عبر واتساب</span>
-                </div>
+                    <div class="flex gap-4">
+                        <span class="gold-accent">✦</span>
+                        <span>تغليف أنيق وفاخر</span>
+                    </div>
 
-                <div class="flex gap-3">
-                    <span class="gold">✦</span>
-                    <span>خدمة مخصصة للزبون</span>
+                    <div class="flex gap-4">
+                        <span class="gold-accent">✦</span>
+                        <span>توصيل إلى جميع الولايات الجزائرية</span>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <span class="gold-accent">✦</span>
+                        <span>تأكيد الطلب هاتفياً</span>
+                    </div>
+
                 </div>
 
             </div>
@@ -960,20 +989,25 @@
 
 <!-- ================= FOOTER ================= -->
 
-<footer class="py-10
+<footer class="py-12
+               px-6
                border-t border-white/5
                text-center">
 
-    <div class="font-luxury
-                text-2xl gold">
+    <div class="font-serif-eu
+                text-3xl
+                gold-accent">
+
         HOUD HONEY
+
     </div>
 
     <p class="text-zinc-600
-              text-xs mt-4">
+              text-xs
+              mt-4">
 
-        © 2026 HOUD HONEY
-        — جميع الحقوق محفوظة
+        © 2026 HOUD HONEY PREMIUM.
+        جميع الحقوق محفوظة.
 
     </p>
 
@@ -982,228 +1016,177 @@
 
 <!-- ================= WHATSAPP ================= -->
 
-<a href="https://wa.me/213663561135"
-   target="_blank"
-   rel="noopener"
-   class="whatsapp"
-   aria-label="التواصل عبر واتساب">
+<a
+    href="https://wa.me/213663561135"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="whatsapp-float"
+    aria-label="تواصل معنا عبر واتساب">
 
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
         fill="currentColor"
+        viewBox="0 0 24 24"
         class="w-8 h-8">
 
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M20.52 3.48A11.78 11.78 0 0012.05 0
+        C5.55 0 .27 5.28 .27 11.78
+        c0 2.08 .54 4.11 1.57 5.9L.17 24
+        l6.46-1.63a11.78 11.78 0 005.42 1.3h.01
+        c6.5 0 11.78-5.28 11.78-11.78
+        0-3.14-1.22-6.09-3.32-8.41z
+        M12.06 21.64h-.01
+        a9.82 9.82 0 01-5.01-1.37l-.36-.21
+        -3.83.97 1.02-3.73-.23-.38
+        a9.83 9.83 0 01-1.51-5.14
+        c0-5.42 4.41-9.83 9.84-9.83
+        2.63 0 5.1 1.02 6.96 2.88
+        a9.78 9.78 0 012.87 6.96
+        c0 5.42-4.41 9.85-9.84 9.85z"/>
 
     </svg>
 
 </a>
 
 
+<!-- ================= JAVASCRIPT ================= -->
+
 <script>
 
-    /* =========================
-       الولايات الجزائرية
-    ========================= */
-
-    const wilayas = [
-        "أدرار","الشلف","الأغواط","أم البواقي",
-        "باتنة","بجاية","بسكرة","بشار",
-        "البليدة","البويرة","تمنراست","تبسة",
-        "تلمسان","تيارت","تيزي وزو","الجزائر العاصمة",
-        "الجلفة","جيجل","سطيف","سعيدة",
-        "سكيكدة","سيدي بلعباس","عنابة","قالمة",
-        "قسنطينة","المدية","مستغانم","المسيلة",
-        "معسكر","ورقلة","وهران","البيض",
-        "إليزي","برج بوعريريج","بومرداس","الطارف",
-        "تندوف","تسمسيلت","الوادي","خنشلة",
-        "سوق أهراس","تيبازة","ميلة","عين الدفلى",
-        "النعامة","عين تموشنت","غرداية","غليزان",
-        "تيميمون","برج باجي مختار","أولاد جلال",
-        "بني عباس","عين صالح","عين قزام","تقرت",
-        "جانت","المغير","المنيعة"
-    ];
+const wilayas = [
+"01- أدرار","02- الشلف","03- الأغواط","04- أم البواقي",
+"05- باتنة","06- بجاية","07- بسكرة","08- بشار",
+"09- البليدة","10- البويرة","11- تمنراست","12- تبسة",
+"13- تلمسان","14- تيارت","15- تيزي وزو","16- الجزائر",
+"17- الجلفة","18- جيجل","19- سطيف","20- سعيدة",
+"21- سكيكدة","22- سيدي بلعباس","23- عنابة","24- قالمة",
+"25- قسنطينة","26- المدية","27- مستغانم","28- المسيلة",
+"29- معسكر","30- ورقلة","31- وهران","32- البيض",
+"33- إليزي","34- برج بوعريريج","35- بومرداس","36- الطارف",
+"37- تندوف","38- تسمسيلت","39- الوادي","40- خنشلة",
+"41- سوق أهراس","42- تيبازة","43- ميلة","44- عين الدفلى",
+"45- النعامة","46- عين تموشنت","47- غرداية","48- غليزان",
+"49- تيميمون","50- برج باجي مختار","51- أولاد جلال",
+"52- بني عباس","53- عين صالح","54- عين قزام",
+"55- تقرت","56- جانت","57- المغير","58- المنيعة"
+];
 
 
-    /* تعبئة الولايات */
+document.addEventListener("DOMContentLoaded", () => {
 
-    const wilayaSelect =
-        document.getElementById("wilaya");
+    const list = document.getElementById("wilayas");
 
     wilayas.forEach(wilaya => {
 
-        const option =
-            document.createElement("option");
+        const option = document.createElement("option");
 
         option.value = wilaya;
-        option.textContent = wilaya;
 
-        wilayaSelect.appendChild(option);
+        list.appendChild(option);
 
     });
 
+    calculateTotal();
 
-    /* =========================
-       اختيار المنتج
-    ========================= */
-
-    function selectProduct(product) {
-
-        document.getElementById("honeyType")
-            .value = product;
-
-        document.getElementById("order")
-            .scrollIntoView({
-                behavior: "smooth"
-            });
-
-    }
+});
 
 
-    /* =========================
-       حساب السعر
-    ========================= */
+function selectProduct(productName) {
 
-    function calculateTotal() {
-
-        const quantity =
-            Number(
-                document.getElementById("quantity").value
-            );
-
-        let total = 4500;
-
-        if (quantity === 2) {
-            total = 8500;
-        }
-
-        if (quantity === 3) {
-            total = 12000;
-        }
-
-        document.getElementById("total")
-            .textContent =
-            total.toLocaleString("ar-DZ")
-            + " دج";
-
-        return total;
-
-    }
-
-
-    /* =========================
-       إرسال الطلب إلى واتساب
-    ========================= */
+    document.getElementById("honeyType").value = productName;
 
     document
-        .getElementById("orderForm")
-        .addEventListener("submit", function(event) {
-
-            event.preventDefault();
-
-
-            const name =
-                document
-                .getElementById("client_name")
-                .value.trim();
-
-
-            const phone =
-                document
-                .getElementById("client_phone")
-                .value.trim();
-
-
-            const product =
-                document
-                .getElementById("honeyType")
-                .value;
-
-
-            const wilaya =
-                document
-                .getElementById("wilaya")
-                .value;
-
-
-            const address =
-                document
-                .getElementById("client_address")
-                .value.trim();
-
-
-            const quantity =
-                document
-                .getElementById("quantity")
-                .value;
-
-
-            const total =
-                calculateTotal();
-
-
-            if (!name ||
-                !phone ||
-                !wilaya ||
-                !address) {
-
-                alert(
-                    "يرجى إكمال جميع البيانات المطلوبة."
-                );
-
-                return;
-
-            }
-
-
-            const message =
-
-`🍯 *طلب جديد — HOUD HONEY*
-
-👤 الاسم:
-${name}
-
-📱 الهاتف:
-${phone}
-
-🍯 المنتج:
-${product}
-
-📦 الكمية:
-${quantity} عبوة
-
-📍 الولاية:
-${wilaya}
-
-🏠 العنوان:
-${address}
-
-💰 المجموع:
-${total.toLocaleString("ar-DZ")} دج
-
-━━━━━━━━━━━━━━
-✨ HOUD HONEY
-طلب جديد عبر الموقع`;
-
-
-            const whatsappNumber =
-                "213663561135";
-
-
-            const whatsappURL =
-                "https://wa.me/"
-                + whatsappNumber
-                + "?text="
-                + encodeURIComponent(message);
-
-
-            window.open(
-                whatsappURL,
-                "_blank"
-            );
-
+        .getElementById("order")
+        .scrollIntoView({
+            behavior: "smooth"
         });
+
+}
+
+
+function calculateTotal() {
+
+    const quantity =
+        Number(
+            document.getElementById("product_quantity").value
+        );
+
+    let total = 4500;
+
+    if (quantity === 2) {
+        total = 8500;
+    }
+
+    if (quantity === 3) {
+        total = 12000;
+    }
+
+    document.getElementById(
+        "final_total_display"
+    ).textContent =
+        total.toLocaleString("ar-DZ") + " دج";
+
+}
+
+
+document
+.getElementById("luxuryOrderForm")
+.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const name =
+        document.getElementById("client_name").value.trim();
+
+    const phone =
+        document.getElementById("client_phone").value.trim();
+
+    const honey =
+        document.getElementById("honeyType").value;
+
+    const wilaya =
+        document.getElementById("wilaya_search").value;
+
+    const address =
+        document.getElementById("client_address").value.trim();
+
+    const quantity =
+        document.getElementById("product_quantity").value;
+
+    let total = 4500;
+
+    if (quantity === "2") total = 8500;
+
+    if (quantity === "3") total = 12000;
+
+
+    const message =
+`السلام عليكم، أريد طلب عسل هود 🍯
+
+الاسم: ${name}
+الهاتف: ${phone}
+المنتج: ${honey}
+الكمية: ${quantity}
+الولاية: ${wilaya}
+العنوان: ${address}
+المجموع: ${total} دج`;
+
+
+    const whatsappNumber = "213663561135";
+
+    const whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+});
 
 </script>
 
